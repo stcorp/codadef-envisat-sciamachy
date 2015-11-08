@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_MF2_AX_GADS_amf" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="num_ref_wvlen">
+    <cd:Integer>
+      <cd:Description>Number of reference wavelengths</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_ht">
+    <cd:Integer>
+      <cd:Description>Number of reference heights</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_scena">
+    <cd:Integer>
+      <cd:Description>Number of reference 'scenarios'</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_alb">
+    <cd:Integer>
+      <cd:Description>Number of reference albedos</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_aero_type">
+    <cd:Integer>
+      <cd:Description>Number of reference aerosol types</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_coeff_sol_zen_ang_par">
+    <cd:Integer>
+      <cd:Description>Number of coefficients in solar zenith angle</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_coeff_los_zen_ang_par">
+    <cd:Integer>
+      <cd:Description>Number of coefficients in line-of-sight nadir angle parameterization</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_azimuth">
+    <cd:Integer>
+      <cd:Description>Number of azimuths</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_days">
+    <cd:Integer>
+      <cd:Description>Number of reference days</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ref_wvlen">
+    <cd:Array>
+      <cd:Description>Reference wavelengths</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_wvlen)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>nm</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ref_ht">
+    <cd:Array>
+      <cd:Description>Reference heights</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_ht)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>km</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="lat_grid_ref_scena">
+    <cd:Array>
+      <cd:Description>Latitude grid of the reference scenarios</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>degrees_north</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ref_albedos">
+    <cd:Array>
+      <cd:Description>Reference albedos</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_alb)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>%</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ref_azimuths">
+    <cd:Array>
+      <cd:Description>Reference azimuths</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_azimuth)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>degrees</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ref_days">
+    <cd:Array>
+      <cd:Description>Reference days</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_days)]]></cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="air_mass_fact_coeff">
+    <cd:Array>
+      <cd:Description>Air Mass Factor coefficients</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_wvlen)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_scena)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_azimuth)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_ht)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_alb)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_aero_type)]]></cd:Dimension>
+      <cd:Dimension>15</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

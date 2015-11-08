@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_LI1_AX_GADS_sens_grid" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="num_esm_nadir">
+    <cd:Integer>
+      <cd:Description>Number of ESM position for the polarisation sensitivity parameters Nadir</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pos_esm_nadir">
+    <cd:Array>
+      <cd:Description>ESM positions for the polarisation sensitivity parameters Nadir</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_esm_nadir)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_esm_limb">
+    <cd:Integer>
+      <cd:Description>Number of ESM positions for the polarisation sensitivity parameters Limb</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pos_esm_limb">
+    <cd:Array>
+      <cd:Description>ESM positions for the polarisation sensitivity parameters Limb</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_esm_limb)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_asm_limb">
+    <cd:Integer>
+      <cd:Description>Number of ASM positions for the polarisation sensitivity parameters Limb</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pos_asm_limb">
+    <cd:Array>
+      <cd:Description>ASM positions for the polarisation sensitivity parameters Limb</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_asm_limb)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_esm_rad">
+    <cd:Integer>
+      <cd:Description>Number of ESM positions for the radiance sensitivity parameters</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pos_esm_rad">
+    <cd:Array>
+      <cd:Description>ESM positions for the radiance sensitivity parameters</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_esm_rad)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_asm_rad">
+    <cd:Integer>
+      <cd:Description>Number of ASM positions for the radiance sensitivity parameters</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pos_asm_rad">
+    <cd:Array>
+      <cd:Description>ASM positions for the radiance sensitivity parameters</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_asm_rad)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

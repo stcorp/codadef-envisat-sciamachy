@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_ADSR_spec_new" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start time of the SLS measurement state which was used to calculate this ADSR</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="attach_flag">
+    <cd:Integer>
+      <cd:Description>Attachment flag (always set to zero for this ADS)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="orb_phase">
+    <cd:Float>
+      <cd:Description>Orbit phase after eclipse (range: the absolute value is between 0 and 1)</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="coeff">
+    <cd:Array>
+      <cd:Description>Coefficients in the fourth-order polynomial for each detector array (channel)</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>5</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="src_spec_cal_param">
+    <cd:Array>
+      <cd:Description>Source of spectral calibration parameters (0=SLS, 1=sun diffuser)</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_lines">
+    <cd:Array>
+      <cd:Description>Number of used lines per channel</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="cal_err">
+    <cd:Array>
+      <cd:Description>Wavelength calibration error per channel</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="avg_sls_sol_spec">
+    <cd:Array>
+      <cd:Description>Average SLS or solar spectrum which has been used for the determination of spectral calibration parameters</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="sel_line_pos">
+    <cd:Array>
+      <cd:Description>Selected line positions for 3 lines per channel</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>3</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>nm</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

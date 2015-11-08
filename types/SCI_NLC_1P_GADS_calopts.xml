@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NLC_1P_GADS_calopts" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="l1b_product_name">
+    <cd:Text format="ascii">
+      <cd:Description>Level 1b Product name</cd:Description>
+      <cd:ByteSize>62</cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="geo_filter_flag">
+    <cd:Integer>
+      <cd:Description>Geolocation Filter Flag (-1 filter applied, 0 not used)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="start_pos">
+    <cd:Record>
+      <cd:Description>Start Position</cd:Description>
+      <cd:Field name="latitude">
+        <cd:Integer>
+          <cd:Unit>1e-6 degrees_north</cd:Unit>
+          <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+            <cd:Unit>degrees_north</cd:Unit>
+          </cd:Conversion>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="longitude">
+        <cd:Integer>
+          <cd:Unit>1e-6 degrees_east</cd:Unit>
+          <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+            <cd:Unit>degrees_east</cd:Unit>
+          </cd:Conversion>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="end_pos">
+    <cd:Record>
+      <cd:Description>End Position</cd:Description>
+      <cd:Field name="latitude">
+        <cd:Integer>
+          <cd:Unit>1e-6 degrees_north</cd:Unit>
+          <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+            <cd:Unit>degrees_north</cd:Unit>
+          </cd:Conversion>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+      <cd:Field name="longitude">
+        <cd:Integer>
+          <cd:Unit>1e-6 degrees_east</cd:Unit>
+          <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+            <cd:Unit>degrees_east</cd:Unit>
+          </cd:Conversion>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>int32</cd:NativeType>
+        </cd:Integer>
+      </cd:Field>
+    </cd:Record>
+  </cd:Field>
+  <cd:Field name="time_filter_flag">
+    <cd:Integer>
+      <cd:Description>Time Filter Flag (-1 filter applied, 0 not used)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="start_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Filter Start time</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="stop_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Filter Stop time</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="category_filter_flag">
+    <cd:Integer>
+      <cd:Description>Measurement Category Filter Flag (-1 filter applied, 0 not used)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="category">
+    <cd:Array>
+      <cd:Description>Selected Measurement Category</cd:Description>
+      <cd:Dimension>5</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="nadir_mds_flag">
+    <cd:Integer>
+      <cd:Description>Process Nadir MDS Flag (-1 MDS created, 0 not written)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="limb_mds_flag">
+    <cd:Integer>
+      <cd:Description>Process Limb MDS Flag (-1 MDS created, 0 not written)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="occ_mds_flag">
+    <cd:Integer>
+      <cd:Description>Process Occultation MDS Flag (-1 MDS created, 0 not written)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mon_mds_flag">
+    <cd:Integer>
+      <cd:Description>Process Monitoring MDS Flag (-1 MDS created, 0 not written)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pmd_mds_flag">
+    <cd:Integer>
+      <cd:Description>PMD MDS Flag (-1 MDS created, 0 not written)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="frac_pol_mds_flag">
+    <cd:Integer>
+      <cd:Description>Fractional Polarization MDS Flag (-1 MDS created, 0 not written)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="slit_function_gads_flag">
+    <cd:Integer>
+      <cd:Description>Slit Function GADS Flag (-1 GADS copied, 0 not copied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sun_mean_ref_gads_flag">
+    <cd:Integer>
+      <cd:Description>Sun Mean Reference GADS Flag (-1 GADS copied, 0 not copied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="leakage_current_gads_flag">
+    <cd:Integer>
+      <cd:Description>Leakage Current GADS Flag (-1 GADS copied, 0 not copied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spectral_cal_gads_flag">
+    <cd:Integer>
+      <cd:Description>Spectral Calibration GADS Flag (-1 GADS copied, 0 not copied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pol_sens_gads_flag">
+    <cd:Integer>
+      <cd:Description>Polarization Sensitivity GADS Flag (-1 GADS copied, 0 not copied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="rad_sens_gads_flag">
+    <cd:Integer>
+      <cd:Description>Radiance Sensitivity GADS Flag (-1 GADS copied, 0 not copied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ppg_etalon_gads_flag">
+    <cd:Integer>
+      <cd:Description>PPG/Etalon GADS Flag (-1 GADS copied, 0 not copied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_nadir_clusters">
+    <cd:Integer>
+      <cd:Description>Number of Nadir Clusters selected</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_limb_clusters">
+    <cd:Integer>
+      <cd:Description>Number of Limb Clusters selected</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_occ_clusters">
+    <cd:Integer>
+      <cd:Description>Number of Occultation Clusters selected</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_mon_clusters">
+    <cd:Integer>
+      <cd:Description>Number of Monitoring Clusters selected</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="nadir_cluster_flag">
+    <cd:Array>
+      <cd:Description>Nadir Cluster Flags (-1 used, 0 not used)</cd:Description>
+      <cd:Dimension>64</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>int8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="limb_cluster_flag">
+    <cd:Array>
+      <cd:Description>Limb Cluster Flags (-1 used, 0 not used)</cd:Description>
+      <cd:Dimension>64</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>int8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="occ_cluster_flag">
+    <cd:Array>
+      <cd:Description>Occultation Cluster Flags (-1 used, 0 not used)</cd:Description>
+      <cd:Dimension>64</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>int8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="mon_cluster_flag">
+    <cd:Array>
+      <cd:Description>Monitoring Cluster Flags (-1 used, 0 not used)</cd:Description>
+      <cd:Dimension>64</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>int8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="mem_effect_cal_flag">
+    <cd:Integer>
+      <cd:Description>Memory Effect Correction Flag (-1 applied, 0 not applied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="leakage_current_cal_flag">
+    <cd:Integer>
+      <cd:Description>Leakage Current Calibration Flag (-1 applied, 0 not applied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="straylight_cal_flag">
+    <cd:Integer>
+      <cd:Description>Straylight Calibration Flag (-1 applied, 0 not applied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ppg_cal_flag">
+    <cd:Integer>
+      <cd:Description>PPG Calibration Flag (-1 applied, 0 not applied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="etalon_cal_flag">
+    <cd:Integer>
+      <cd:Description>Etalon Calibration Flag (-1 applied, 0 not applied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spectral_cal_flag">
+    <cd:Integer>
+      <cd:Description>Spectral Calibration Flag (-1 applied, 0 not applied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="polarisation_cal_flag">
+    <cd:Integer>
+      <cd:Description>Polarisation Calibration Flag (-1 applied, 0 not applied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="radiance_cal_flag">
+    <cd:Integer>
+      <cd:Description>Radiance Calibration Flag (-1 applied, 0 not applied)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

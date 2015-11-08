@@ -1,0 +1,588 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__0P_MDSR" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>ISP Sensing Time</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="gsrt">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Ground Station Reference Time of reception</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="isp_length">
+    <cd:Integer>
+      <cd:Description>Length of the ISP = length of the source packet - 7 bytes</cd:Description>
+      <cd:Unit>bytes</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="crc_errs">
+    <cd:Integer>
+      <cd:Description>Number of VCDUs in the ISP which contain a CRC error</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="rs_errs">
+    <cd:Integer>
+      <cd:Description>Number of VCDUs in the ISP for which a Reed-Solomon error correction was performed</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="spare_1">
+    <cd:Array>
+      <cd:Description>Spare (set to zero)</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="packet_header">
+    <cd:NamedType id="CCSDS_packet_header"/>
+  </cd:Field>
+  <cd:Field name="datafield_header_length">
+    <cd:Integer>
+      <cd:Description>Data Field Header Length</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="measurement_category">
+    <cd:Integer>
+      <cd:Description>State Code: Measurement Category</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="state_id">
+    <cd:Integer>
+      <cd:Description>State Code: State ID</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="icu">
+    <cd:Integer>
+      <cd:Description>ICU</cd:Description>
+      <cd:Unit>1/256 s</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="hsm">
+    <cd:Integer>
+      <cd:Description>HSM Interface used. 1 = interface A; 2 = interface B; 3 = interface A+B; 0 = invalid</cd:Description>
+      <cd:BitSize>2</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="act_table_id">
+    <cd:Integer>
+      <cd:Description>ATC parameter table index (0..63)</cd:Description>
+      <cd:BitSize>6</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="configuration_id">
+    <cd:Integer>
+      <cd:Description>Configuration ID (should be 15 or 16 in flight)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="packet_id">
+    <cd:Integer>
+      <cd:Description>Packet Identifier. 1 = Detector data packet; 2 = Auxiliary data packet; 3 = PMD data packet.</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="packet_id_overflow_spare_0">
+    <cd:Raw>
+      <cd:Description>spare</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="overflow">
+    <cd:Integer>
+      <cd:Description>Buffer Overflow Indication. 1 = no buffer overflow; 2 = output buffer overflow, data packets were prepared but could not be transmitted to the HSM.</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="detector_data_packet">
+    <cd:Array>
+      <cd:Description>Data Packet for type-1 (detector) packets</cd:Description>
+      <cd:Dimension><![CDATA[if(int(../packet_id) == 1, 1, 0)]]></cd:Dimension>
+      <cd:Record>
+        <cd:Field name="broadcast_counter">
+          <cd:Integer>
+            <cd:Description>Broadcast Counter</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="pmtc_settings">
+          <cd:NamedType id="SCI_L0_PMTC_Settings_Block"/>
+        </cd:Field>
+        <cd:Field name="orbit_state_vector">
+          <cd:NamedType id="SCI_L0_Orbit_State_Vector"/>
+        </cd:Field>
+        <cd:Field name="channels">
+          <cd:Integer>
+            <cd:Description>The number of channels to follow in the Source Data Field of the Detector Packet.</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="channel_data_blocks">
+          <cd:Array>
+            <cd:Description>Channel Data Blocks</cd:Description>
+            <cd:Dimension><![CDATA[int(../channels)]]></cd:Dimension>
+            <cd:Record>
+              <cd:Field name="channel_sync_pattern">
+                <cd:Integer>
+                  <cd:Description>Channel Synchronisation Pattern (value 0xAAAA, hex).</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="channel_id">
+                <cd:Integer>
+                  <cd:Description>Channel Identifier (1--8).</cd:Description>
+                  <cd:BitSize>4</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="channel_is">
+                <cd:Integer>
+                  <cd:Description>DME Interface Status. 0 = no error in DME/ID status registers; 1 = gate too long or gate too short (error in status register 1); 2 = word count error or EOT error (error in status register 2); 3 = error in status register 1 and 2.</cd:Description>
+                  <cd:BitSize>2</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="channel_lu">
+                <cd:Integer>
+                  <cd:Description>Latch up indicator. 0 = no latch-up; 1 = latch-up detected during measurement.</cd:Description>
+                  <cd:BitSize>2</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="clusters">
+                <cd:Integer>
+                  <cd:Description>Clusters</cd:Description>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="broadcast_counter">
+                <cd:Integer>
+                  <cd:Description>Broadcast Counter</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="reflected_command_word">
+                <cd:Integer>
+                  <cd:Description>Reflected Detector Command Word</cd:Description>
+                  <cd:BitSize>32</cd:BitSize>
+                  <cd:NativeType>uint32</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="ratio">
+                <cd:Integer>
+                  <cd:Description>Latest status data as read from the detector electronics.</cd:Description>
+                  <cd:BitSize>5</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="adc_status_command_pending">
+                <cd:Integer>
+                  <cd:Description>ADC status bit: Command Pending.</cd:Description>
+                  <cd:BitSize>1</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="adc_status_calibration">
+                <cd:Integer>
+                  <cd:Description>ADC status bit: Calibration running.</cd:Description>
+                  <cd:BitSize>1</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="adc_status_latchup_detected">
+                <cd:Integer>
+                  <cd:Description>ADC status bit: latch-up detected.</cd:Description>
+                  <cd:BitSize>1</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="frame_counter">
+                <cd:Integer>
+                  <cd:Description>Ratio, Statusbits, Frame-Counter</cd:Description>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="bias_voltage">
+                <cd:Integer>
+                  <cd:Description>Bias Voltage</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="detector_temperature">
+                <cd:Integer>
+                  <cd:Description>Detector Temperature</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="cluster_data">
+                <cd:Array>
+                  <cd:Description>Cluster Data</cd:Description>
+                  <cd:Dimension><![CDATA[int(../clusters)]]></cd:Dimension>
+                  <cd:Record>
+                    <cd:Field name="cluster_sync">
+                      <cd:Integer>
+                        <cd:Description>Cluster Synchronisation Pattern (value 0xBBBB, hex)</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="block_number">
+                      <cd:Integer>
+                        <cd:Description>Block number</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="cluster_id">
+                      <cd:Integer>
+                        <cd:Description>Cluster Identifier (range 0--15).</cd:Description>
+                        <cd:BitSize>8</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="coadding">
+                      <cd:Integer>
+                        <cd:Description>Co-adding Indicator (range 1--64).</cd:Description>
+                        <cd:BitSize>8</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="start_pixel">
+                      <cd:Integer>
+                        <cd:Description>Start Pixel (range 0--8191)</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="length">
+                      <cd:Integer>
+                        <cd:Description>Closter Block Length (range 1--1024)</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="pixel_data_nc">
+                      <cd:Array>
+                        <cd:Description>Pixel data (no coadding)</cd:Description>
+                        <cd:Dimension><![CDATA[if(int(../coadding) == 1, int(../length), 0)]]></cd:Dimension>
+                        <cd:Integer>
+                          <cd:BitSize>16</cd:BitSize>
+                          <cd:NativeType>uint16</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Array>
+                    </cd:Field>
+                    <cd:Field name="pixel_data">
+                      <cd:Array>
+                        <cd:Description>Pixel data (with coadding)</cd:Description>
+                        <cd:Dimension><![CDATA[if(int(../coadding) != 1, int(../length), 0)]]></cd:Dimension>
+                        <cd:Integer>
+                          <cd:BitSize>24</cd:BitSize>
+                          <cd:NativeType>uint32</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Array>
+                    </cd:Field>
+                    <cd:Field name="pixel_data_pad">
+                      <cd:Array>
+                        <cd:Description>Pixel data (padding byte if odd number of bytes)</cd:Description>
+                        <cd:Dimension><![CDATA[if(int(../coadding) != 1, int(../length) % 2, 0)]]></cd:Dimension>
+                        <cd:Integer>
+                          <cd:BitSize>8</cd:BitSize>
+                          <cd:NativeType>uint8</cd:NativeType>
+                        </cd:Integer>
+                      </cd:Array>
+                    </cd:Field>
+                  </cd:Record>
+                </cd:Array>
+              </cd:Field>
+            </cd:Record>
+          </cd:Array>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="auxiliary_data_packet">
+    <cd:Array>
+      <cd:Description>Data Packet for type-2 (auxiliary) packets</cd:Description>
+      <cd:Dimension><![CDATA[if(int(../packet_id) == 2, 1, 0)]]></cd:Dimension>
+      <cd:Record>
+        <cd:Field name="pmtc_settings">
+          <cd:NamedType id="SCI_L0_PMTC_Settings_Block"/>
+        </cd:Field>
+        <cd:Field name="pmtc_frame">
+          <cd:Array>
+            <cd:Description>PMTC Frame</cd:Description>
+            <cd:Dimension>5</cd:Dimension>
+            <cd:Record>
+              <cd:Field name="spd">
+                <cd:Array>
+                  <cd:Description>Scanner Position Data</cd:Description>
+                  <cd:Dimension>16</cd:Dimension>
+                  <cd:Record>
+                    <cd:Field name="pmtc_sync_pattern">
+                      <cd:Integer>
+                        <cd:Description>PMTC Frame Synchronisation Pattern (value 0xDDDD, hex)</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="broadcast_counter">
+                      <cd:Integer>
+                        <cd:Description>Broadcast Counter</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="az_update_flag">
+                      <cd:Integer>
+                        <cd:Description>Azimuth Counter Zero Error Flag. 0 = error is an old value from the last zero crossing; 1 = error is currently updated after a zero reference crossing.</cd:Description>
+                        <cd:BitSize>1</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="el_update_flag">
+                      <cd:Integer>
+                        <cd:Description>Elevation Counter Zero Error Flag. 0 = error is an old value from the last zero crossing; 1 = error is currently updated after a zero reference crossing.</cd:Description>
+                        <cd:BitSize>1</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="td_flag">
+                      <cd:Integer>
+                        <cd:Description>Target Detected Flag. 0 : target is not in the sun follower field of view. 1 = target is in the sun follower field of view.</cd:Description>
+                        <cd:BitSize>1</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="miss_anc_flag">
+                      <cd:Integer>
+                        <cd:Description>Missing Ancillary Data Flag. 0 = normal ancillary data flag; 1 = ancillary data timeout (no update for more than 1.5 sec)</cd:Description>
+                        <cd:BitSize>1</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="phase">
+                      <cd:Integer>
+                        <cd:Description>Identifies the current Scan Phase (range: 2--7).</cd:Description>
+                        <cd:BitSize>4</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="bitfield_1_spare_0">
+                      <cd:Raw>
+                        <cd:Description>spare</cd:Description>
+                        <cd:BitSize>2</cd:BitSize>
+                      </cd:Raw>
+                      <cd:Hidden/>
+                    </cd:Field>
+                    <cd:Field name="pointing_counter">
+                      <cd:Integer>
+                        <cd:Description>Pointing Counter.</cd:Description>
+                        <cd:BitSize>6</cd:BitSize>
+                        <cd:NativeType>uint8</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="encoder_counter_spare">
+                      <cd:Raw>
+                        <cd:Description>spare</cd:Description>
+                        <cd:BitSize>8</cd:BitSize>
+                      </cd:Raw>
+                      <cd:Hidden/>
+                    </cd:Field>
+                    <cd:Field name="az_encoder_counter">
+                      <cd:Integer>
+                        <cd:Description>Azimuth Encoder Counter.</cd:Description>
+                        <cd:BitSize>20</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="el_encoder_counter">
+                      <cd:Integer>
+                        <cd:Description>Elevation Encoder Counter.</cd:Description>
+                        <cd:BitSize>20</cd:BitSize>
+                        <cd:NativeType>uint32</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="azimuth_counter_zero_error">
+                      <cd:Integer>
+                        <cd:Description>Azimuth Counter Zero Error</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="elevation_counter_zero_error">
+                      <cd:Integer>
+                        <cd:Description>Elevation Counter Zero Error</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="azimuth_scanner_control_error">
+                      <cd:Integer>
+                        <cd:Description>Azimuth Scanner Control Error</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="elevation_scanner_control_error">
+                      <cd:Integer>
+                        <cd:Description>Elevation Scanner Control Error</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                  </cd:Record>
+                </cd:Array>
+              </cd:Field>
+              <cd:Field name="temp_bench_1">
+                <cd:Integer>
+                  <cd:Description>Temperature near radiator OBM.</cd:Description>
+                  <cd:BitSize>15</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="control_status_1">
+                <cd:Integer>
+                  <cd:Description>Control Status Bit #1. 0: heater power as requested by control loop 1 is applied; 1 = power request for loop 1 is out of limits, fixed power value is applied.</cd:Description>
+                  <cd:BitSize>1</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="temp_bench_2">
+                <cd:Integer>
+                  <cd:Description>Temperature near elevation scanner, nadir.</cd:Description>
+                  <cd:BitSize>15</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="control_status_2">
+                <cd:Integer>
+                  <cd:Description>Control Status Bit #2. 0: heater power as requested by control loop 1 is applied; 1 = power request for loop 1 is out of limits, fixed power value is applied.</cd:Description>
+                  <cd:BitSize>1</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="temp_bench_3">
+                <cd:Integer>
+                  <cd:Description>Temperature near azimuth scanner, limb.</cd:Description>
+                  <cd:BitSize>15</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="control_status_3">
+                <cd:Integer>
+                  <cd:Description>Control Status Bit #3. 0: heater power as requested by control loop 1 is applied; 1 = power request for loop 1 is out of limits, fixed power value is applied.</cd:Description>
+                  <cd:BitSize>1</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Array>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="pmd_data_packet">
+    <cd:Array>
+      <cd:Description>Data Packet for type-3 (PMD) packets</cd:Description>
+      <cd:Dimension><![CDATA[if(int(../packet_id) == 3, 1, 0)]]></cd:Dimension>
+      <cd:Record>
+        <cd:Field name="temp_hk">
+          <cd:Integer>
+            <cd:Description>PMD Temperature housekeeping data</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="data_packet">
+          <cd:Array>
+            <cd:Description>PMD Data Packet</cd:Description>
+            <cd:Dimension>200</cd:Dimension>
+            <cd:Record>
+              <cd:Field name="pmd_sync_pattern">
+                <cd:Integer>
+                  <cd:Description>PMD Data Synchronisation Pattern (value 0xEEEE, hex).</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="pmd_meas">
+                <cd:Array>
+                  <cd:Description>PMD measurement data</cd:Description>
+                  <cd:Dimension>7</cd:Dimension>
+                  <cd:Record>
+                    <cd:Field name="a">
+                      <cd:Integer>
+                        <cd:Description>Low-gain value</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                    <cd:Field name="b">
+                      <cd:Integer>
+                        <cd:Description>High-gain value</cd:Description>
+                        <cd:BitSize>16</cd:BitSize>
+                        <cd:NativeType>uint16</cd:NativeType>
+                      </cd:Integer>
+                    </cd:Field>
+                  </cd:Record>
+                </cd:Array>
+              </cd:Field>
+              <cd:Field name="broadcast_counter">
+                <cd:Integer>
+                  <cd:Description>Broadcast Counter</cd:Description>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="is">
+                <cd:Integer>
+                  <cd:Description>PMD Interface Status. 0 = no error in PMD I/F register; 1 = error in PMD I/F status register detected.</cd:Description>
+                  <cd:BitSize>1</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="delta_time">
+                <cd:Integer>
+                  <cd:Description>Datation of the PMD data SYNC relative to the last Broadcast Signal Pulse.</cd:Description>
+                  <cd:BitSize>15</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Array>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

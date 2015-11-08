@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_CL2_AX_GADS_cl" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="num_asym_param">
+    <cd:Integer>
+      <cd:Description>Number of asymmetry parameters</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_zen_ang">
+    <cd:Integer>
+      <cd:Description>Number of reference zenith angles</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_azi">
+    <cd:Integer>
+      <cd:Description>Number of reference azimuths</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_wvlen">
+    <cd:Integer>
+      <cd:Description>Number of reference wavelengths for espace function correction</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_zen_ang_esc">
+    <cd:Integer>
+      <cd:Description>Number of reference zenith angles for espace function correction</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_cl_types">
+    <cd:Integer>
+      <cd:Description>Number of different cloud types</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ref_wvlen">
+    <cd:Array>
+      <cd:Description>Reference wavelengths</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_wvlen)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>nm</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ref_asym_param_cl">
+    <cd:Array>
+      <cd:Description>Reference asymmetry parameters for different cloud types</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_asym_param)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="spe_asym_param_cl">
+    <cd:Array>
+      <cd:Description>Spectral dependent asymmetry parameters for different cloud types</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_asym_param)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_wvlen)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ref_azi">
+    <cd:Array>
+      <cd:Description>Reference azimuths</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_azi)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="cos_ref_zen_ang">
+    <cd:Array>
+      <cd:Description>Cosines of reference zenith angles</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_zen_ang)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>1/sr</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="cos_ref_zen_ang_esc">
+    <cd:Array>
+      <cd:Description>Cosines of reference escape function zenith angles</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_zen_ang_esc)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>1/sr</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="raw_cl_top_reflect">
+    <cd:Array>
+      <cd:Description>Raw data cloud-top reflectance</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_cl_types)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_azi)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_zen_ang)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_zen_ang)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="raw_esc">
+    <cd:Array>
+      <cd:Description>Raw data escape function</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_cl_types)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_zen_ang_esc)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_wvlen)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

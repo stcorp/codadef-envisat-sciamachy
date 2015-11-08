@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="GenericSingleMDSRDataset" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="data">
+    <cd:Raw>
+      <cd:Description>unspecified data (binary or ASCII)</cd:Description>
+      <cd:BitSize><![CDATA[$ds_size[index(../..) - 3]]]></cd:BitSize>
+    </cd:Raw>
+  </cd:Field>
+</cd:Record>

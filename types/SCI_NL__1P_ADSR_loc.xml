@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_ADSR_loc" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start time of the scan phase of the state</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="attach_flag">
+    <cd:Integer>
+      <cd:Description>Attachment Flag (set to 1 if all MDSRs corresponding to this ADSR are blank, set to zero otherwise)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="coord_grd">
+    <cd:Array>
+      <cd:Description>For Nadir: 4 corner co-ordinates of the ground scene which is covered by the state (the first co-ordinate is the one which is the first in time and flight direction, the second the first in time and last in flight direction, the third the last in time and first in flight direction and the fourth the last in time and flight direction). For Limb: The first coordinate corresponds to the first geolocation start of integration time, the second the first geolocation end of integration time, the third the last geolocation start of integration time, and the fourth the last geolocation end of integration time. For Occultation: The first two coordinates are the tangent ground point of the middle of the integration time for the first geolocation and the second two coordinates are the tangent ground point of the middle of the integration time for the last geolocation. For all other states: The first two coordinates are the sub-satellite point of the middle of the integration time for the first geolocation and the second two coordinates are the sub-satellite point of the middle of the integration time for the last geolocation. If state is corrupted, values are set to zero.</cd:Description>
+      <cd:Dimension>4</cd:Dimension>
+      <cd:Record>
+        <cd:Field name="latitude">
+          <cd:Integer>
+            <cd:Unit>1e-6 degrees_north</cd:Unit>
+            <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+              <cd:Unit>degrees_north</cd:Unit>
+            </cd:Conversion>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="longitude">
+          <cd:Integer>
+            <cd:Unit>1e-6 degrees_east</cd:Unit>
+            <cd:Conversion numerator="1.000000" denominator="1000000.000000">
+              <cd:Unit>degrees_east</cd:Unit>
+            </cd:Conversion>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>int32</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

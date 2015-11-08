@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<cd:ProductClass name="ENVISAT_SCIAMACHY" last-modified="2013-06-18" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Description>ENVISAT SCIAMACHY products</cd:Description>
+  <cd:ProductType name="SCI_NL__0P">
+    <cd:Description>SCIAMACHY Level 0</cd:Description>
+    <cd:ProductDefinition id="SCI_NL__0P" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NL__0P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_NL__1P">
+    <cd:Description>SCIAMACHY Level-1b</cd:Description>
+    <cd:ProductDefinition id="SCI_NL__1P_v0" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NL__1P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009 3-C  </cd:MatchData>
+      </cd:DetectionRule>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NL__1P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS2009_06_3C </cd:MatchData>
+      </cd:DetectionRule>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NL__1P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS2009_15_3F </cd:MatchData>
+      </cd:DetectionRule>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NL__1P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_15_3H</cd:MatchData>
+      </cd:DetectionRule>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NL__1P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_15_3J</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+    <cd:ProductDefinition id="SCI_NL__1P_v1" format="binary" version="1">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NL__1P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_15_3K</cd:MatchData>
+      </cd:DetectionRule>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NL__1P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_15_3L</cd:MatchData>
+      </cd:DetectionRule>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NL__1P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_3/L  </cd:MatchData>
+      </cd:DetectionRule>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NL__1P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_3/M  </cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_NLC_1P">
+    <cd:Description>SCIAMACHY Level-1c</cd:Description>
+    <cd:ProductDefinition id="SCI_NLC_1P_v0" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NLC_1P</cd:MatchData>
+      </cd:DetectionRule>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NLC_1C</cd:MatchData>
+      </cd:DetectionRule>      
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_NL__2P">
+    <cd:Description>SCIAMACHY Vertical Column Amounts</cd:Description>
+    <cd:ProductDefinition id="SCI_NL__2P" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_NL__2P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_RV__2P">
+    <cd:Description>SCIAMACHY Selected Vertical Column Amounts for Meteo Users</cd:Description>
+    <cd:ProductDefinition id="SCI_RV__2P" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_RV__2P</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_OL__2P">
+    <cd:Description>SCIAMACHY Off-Line Level-2</cd:Description>
+    <cd:ProductDefinition id="SCI_OL__2P_v0" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_OL__2P</cd:MatchData>
+        <cd:MatchData offset="95">ENV-ID-DLR-SCI-2200-4  </cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+    <cd:ProductDefinition id="SCI_OL__2P_v1" format="binary" version="1">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_OL__2P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS2009_15_3I </cd:MatchData>
+      </cd:DetectionRule>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_OL__2P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS2009_15_3J </cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+    <cd:ProductDefinition id="SCI_OL__2P_v2" format="binary" version="2">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_OL__2P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS2009_15_3K </cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+    <cd:ProductDefinition id="SCI_OL__2P_v3" format="binary" version="3">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_OL__2P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS2009_15_3L </cd:MatchData>
+      </cd:DetectionRule>
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_OL__2P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS2009_3/L   </cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+    <cd:ProductDefinition id="SCI_OL__2P_v4" format="binary" version="4">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_OL__2P</cd:MatchData>
+        <cd:MatchData offset="95">PO-RS-MDA-GS-2009_3/M  </cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_LK1_AX">
+    <cd:Description>Leakage Current Parameters</cd:Description>
+    <cd:ProductDefinition id="SCI_LK1_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_LK1_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_PE1_AX">
+    <cd:Description>Pixel-to-Pixel Gain (PPG)/Etalon Parameters</cd:Description>
+    <cd:ProductDefinition id="SCI_PE1_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_PE1_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_SP1_AX">
+    <cd:Description>Spectral Calibration Parameters</cd:Description>
+    <cd:ProductDefinition id="SCI_SP1_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_SP1_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_SU1_AX">
+    <cd:Description>Sun Reference Spectrum</cd:Description>
+    <cd:ProductDefinition id="SCI_SU1_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_SU1_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_KD1_AX">
+    <cd:Description>Key Data (Instrument Characterization)</cd:Description>
+    <cd:ProductDefinition id="SCI_KD1_AX" format="ascii" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_KD1_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_MF1_AX">
+    <cd:Description>m-Factor File</cd:Description>
+    <cd:ProductDefinition id="SCI_MF1_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_MF1_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_LI1_AX">
+    <cd:Description>Level-1B Initialization File</cd:Description>
+    <cd:ProductDefinition id="SCI_LI1_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_LI1_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_LI2_AX">
+    <cd:Description>Level-2 Initialization File</cd:Description>
+    <cd:ProductDefinition id="SCI_LI2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_LI2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_PR2_AX">
+    <cd:Description>Atmospheric Climatologies (Profiles) Data</cd:Description>
+    <cd:ProductDefinition id="SCI_PR2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_PR2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_CL2_AX">
+    <cd:Description>Cloud Parameters</cd:Description>
+    <cd:ProductDefinition id="SCI_CL2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_CL2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_SF2_AX">
+    <cd:Description>Surface Databases</cd:Description>
+    <cd:ProductDefinition id="SCI_SF2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_SF2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_CS2_AX">
+    <cd:Description>Literature Reference Cross-Section Database</cd:Description>
+    <cd:ProductDefinition id="SCI_CS2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_CS2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_BL2_AX">
+    <cd:Description>Line-by-Line Absorption Cross-Section Spectra</cd:Description>
+    <cd:ProductDefinition id="SCI_BL2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_BL2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_FM2_AX">
+    <cd:Description>Flight-Model Reference Cross-Section Spectra</cd:Description>
+    <cd:ProductDefinition id="SCI_FM2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_FM2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_UC2_AX">
+    <cd:Description>Undersampling Correction Spectra</cd:Description>
+    <cd:ProductDefinition id="SCI_UC2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_UC2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_CC2_AX">
+    <cd:Description>PMD Minimum Reflectance Library</cd:Description>
+    <cd:ProductDefinition id="SCI_CC2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_CC2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_MF2_AX">
+    <cd:Description>Air Mass Factor Look-Up Table</cd:Description>
+    <cd:ProductDefinition id="SCI_MF2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_MF2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_PF2_AX">
+    <cd:Description>BIAS Slant Path Factor Look-Up Table File</cd:Description>
+    <cd:ProductDefinition id="SCI_PF2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_PF2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_RC2_AX">
+    <cd:Description>AAIA Rayleigh Correction Look-Up Table File</cd:Description>
+    <cd:ProductDefinition id="SCI_RC2_AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_RC2_AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+  <cd:ProductType name="SCI_IN__AX">
+    <cd:Description>Static parameters for the level 2 off-line product Initialization</cd:Description>
+    <cd:ProductDefinition id="SCI_IN__AX" format="binary" version="0">
+      <cd:DetectionRule>
+        <cd:MatchData offset="0">PRODUCT=</cd:MatchData>
+        <cd:MatchData offset="9">SCI_IN__AX</cd:MatchData>
+      </cd:DetectionRule>
+    </cd:ProductDefinition>
+  </cd:ProductType>
+</cd:ProductClass>

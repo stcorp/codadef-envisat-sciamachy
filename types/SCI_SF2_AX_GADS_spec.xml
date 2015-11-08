@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_SF2_AX_GADS_spec" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="num_surf_type">
+    <cd:Integer>
+      <cd:Description>Number of surface types</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="surf_type">
+    <cd:Array format="ascii">
+      <cd:Description>Surface types</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_surf_type)]]></cd:Dimension>
+      <cd:Text>
+        <cd:ByteSize>11</cd:ByteSize>
+        <cd:NativeType>string</cd:NativeType>
+      </cd:Text>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_wvlen">
+    <cd:Integer>
+      <cd:Description>Number of wavelengths</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="wvlen">
+    <cd:Array>
+      <cd:Description>Wavelengths</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_wvlen)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>nm</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="spec_reflec">
+    <cd:Array>
+      <cd:Description>Spectral reflectance</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_wvlen)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_surf_type)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_GADS_rad_nadir" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="elev_mirr_pos">
+    <cd:Float>
+      <cd:Description>Elevation mirror position</cd:Description>
+      <cd:Unit>degrees</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="rad_sen">
+    <cd:Array>
+      <cd:Description>Radiance sensitivity for the mirror position of field 1</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>(BU/s)/(photons/cm2.nm.sr.s)</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

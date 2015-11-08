@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_LK1_AX_GADS_const" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="fpn_const">
+    <cd:Array>
+      <cd:Description>Constant fraction of the fixed pattern noise (FPN) for each detector element of all eight channels (intersect of leakage current straight line)</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="err_fpn_const">
+    <cd:Array>
+      <cd:Description>Error on constant fraction of FPN</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="leak_const">
+    <cd:Array>
+      <cd:Description>Constant fraction of the leakage current for each detector element of all eight channels (slope of leakage current straight line)</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU/s</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="err_leak_const">
+    <cd:Array>
+      <cd:Description>Error on constant fraction of leakage current</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU/s</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="pmd_off_const">
+    <cd:Array>
+      <cd:Description>Constant fraction of the PMD dark offset of all 7 PMDs (1A, 1B, 2A, etc.)</cd:Description>
+      <cd:Dimension>7</cd:Dimension>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="err_pmd_off_const">
+    <cd:Array>
+      <cd:Description>Error on constant fraction of PMD offset (1A, 1B, 2A, etc.)</cd:Description>
+      <cd:Dimension>7</cd:Dimension>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="mean_noise">
+    <cd:Array>
+      <cd:Description>Mean noise (mean value of standard deviations per detector element) per detector array and noise on PMDs)</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__2P_MDSR_clouds_aerosols" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start Time of DSR</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="dsr_length">
+    <cd:Integer>
+      <cd:Description>Length of this DSR in bytes</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 if empty DSR)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="integr_time">
+    <cd:Integer>
+      <cd:Description>Integration time for this DSR</cd:Description>
+      <cd:Unit>1/16 s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="16.000000">
+        <cd:Unit>s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_pmd">
+    <cd:Integer>
+      <cd:Description>Number of PMD sub-pixels for this DSR</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cl_frac">
+    <cd:Array>
+      <cd:Description>Cloud fraction of PMD sub-pixel</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_pmd)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit/>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ave_clo_fract_foot">
+    <cd:Float>
+      <cd:Description>Average cloud fraction of footprint</cd:Description>
+      <cd:Unit/>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="qual_frac_cloud_cov">
+    <cd:Integer>
+      <cd:Description>Quality of fractional cloud cover</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cl_top_pres">
+    <cd:Float>
+      <cd:Description>Cloud-top pressure</cd:Description>
+      <cd:Unit>hPa</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="aero_abso_ind">
+    <cd:Float>
+      <cd:Description>Aerosol absorbing index</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="equiv_lam_alb">
+    <cd:Float>
+      <cd:Description>Equivalent Lambertian albedo</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="flag_output_flags">
+    <cd:Integer>
+      <cd:Description>Flag describing the output above</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_CC2_AX_GADS_cl" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="num_pmd_chan_cca">
+    <cd:Integer>
+      <cd:Description>Number of PMD-channels used in CCA</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_lat_ent">
+    <cd:Integer>
+      <cd:Description>Number of latitude entries</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_long_ent">
+    <cd:Integer>
+      <cd:Description>Number of longitude entries</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="reflec_thresh">
+    <cd:Array>
+      <cd:Description>Reflectance thresholds</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_lat_ent)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_long_ent)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_pmd_chan_cca)]]></cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>int16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

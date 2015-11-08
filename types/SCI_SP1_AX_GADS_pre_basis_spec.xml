@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_SP1_AX_GADS_pre_basis_spec" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="wvlen_det_pix">
+    <cd:Array>
+      <cd:Description>Wavelength of detector pixel</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>nm</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

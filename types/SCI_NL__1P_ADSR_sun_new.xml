@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_ADSR_sun_new" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start time of the first dark measurement state (out of three) which was used to calculate this ADSR</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="attach_flag">
+    <cd:Integer>
+      <cd:Description>Attachment Flag</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sun_spect_id">
+    <cd:Text format="ascii">
+      <cd:Description>Sun spectrum identifier ('X ' where X indicates the solar measurement mode ('D': Calibrated Diffuser (ESM/ASM), 'E': Uncalibrated Diffuser (ESM), 'A': Uncalibrated Diffuser (ASM), 'O': Calibrated Occultation, 'U': Uncalibrated Occultation, 'S': Calibrated Sun Solar, 'V': Uncalibrated Sun Solar))</cd:Description>
+      <cd:ByteSize>2</cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="neu_den_filt_flag">
+    <cd:Integer>
+      <cd:Description>Neutral density filter flag</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="wvlen_sun_spec">
+    <cd:Array>
+      <cd:Description>Wavelength of the sun spectrum</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>nm</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="mean_ref_spec">
+    <cd:Array>
+      <cd:Description>Mean sun reference spectrum (unit: calibrated = photons/(cm2.nm.s), uncalibrated = BU)</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="rel_rad_prec">
+    <cd:Array>
+      <cd:Description>Relative radiometric precision of the mean sun reference spectrum</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="rel_rad_acc">
+    <cd:Array>
+      <cd:Description>Relative radiometric accuracy of the mean sun reference spectrum</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="diff_aper_etalon">
+    <cd:Array>
+      <cd:Description>Diffuser / Small Aperture Etalon</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ave_azi_pos">
+    <cd:Float>
+      <cd:Description>Average azimuth mirror position</cd:Description>
+      <cd:Unit>degrees</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="avg_ele_pos">
+    <cd:Float>
+      <cd:Description>Average elevation mirror position (diffuser)</cd:Description>
+      <cd:Unit>degrees</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="avg_solar_ele_ang">
+    <cd:Float>
+      <cd:Description>Average solar elevation angle</cd:Description>
+      <cd:Unit>degrees</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="mean_pmd">
+    <cd:Array>
+      <cd:Description>Mean value of the corresponding PMD measurements</cd:Description>
+      <cd:Dimension>7</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="pmd_out">
+    <cd:Array>
+      <cd:Description>PMD out-of-band signal</cd:Description>
+      <cd:Dimension>7</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="dopp_shift_500nm">
+    <cd:Float>
+      <cd:Description>Doppler shift at 500 nm</cd:Description>
+      <cd:Unit>nm</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+</cd:Record>

@@ -1,0 +1,496 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="SCI_OL__2P_v2" format="binary" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+  <cd:Field name="mph">
+    <cd:NamedType id="MPH"/>
+  </cd:Field>
+  <cd:Field name="sph">
+    <cd:NamedType id="SCI_OL__2P_SPH_v2"/>
+  </cd:Field>
+  <cd:Field name="dsd">
+    <cd:Array format="ascii">
+      <cd:Dimension><![CDATA[$num_dsd]]></cd:Dimension>
+      <cd:NamedType id="DSD"/>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="summary_quality">
+    <cd:Array>
+      <cd:Description>Summary Quality ADS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[0]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_ADSR_summary_quality"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[0] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[0]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="state_geolocation">
+    <cd:Array>
+      <cd:Description>Geolocation ADS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[1]]]></cd:Dimension>
+      <cd:NamedType id="SCI_NL_OL_2P_ADSR_geolocation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[1] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[1]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="static_param">
+    <cd:Text format="ascii">
+      <cd:Description>Static parameters of the Level 2 off-line processor (verbatim copy of XML file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[2] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[2] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[2]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="states">
+    <cd:Array>
+      <cd:Description>States of the Product ADS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[3]]]></cd:Dimension>
+      <cd:NamedType id="SCI_NL_OL_2P_ADSR_states"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[3] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[3]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="geolocation_nadir">
+    <cd:Array>
+      <cd:Description>Geolocation of the Nadir Ground Pixels ADS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[4]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_ADSR_geolocation_nadir"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[4] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[4]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="geolocation_limb">
+    <cd:Array>
+      <cd:Description>Geolocation of the Limb/Occultation measurements</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[5]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_ADSR_geolocation_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[5] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[5]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="clouds_aerosol">
+    <cd:Array>
+      <cd:Description>Cloud and Aerosol MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[6]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_clouds_aerosols_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[6] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[6]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_uv0_o3">
+    <cd:Array>
+      <cd:Description>O3 Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[7]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[7] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[7]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_uv1_no2">
+    <cd:Array>
+      <cd:Description>NO2 Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[8]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[8] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[8]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_uv2_o3">
+    <cd:Array>
+      <cd:Description>O3 Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[9]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[9] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[9]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_uv3_bro">
+    <cd:Array>
+      <cd:Description>BrO Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[10]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[10] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[10]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_uv4_h2co">
+    <cd:Array>
+      <cd:Description>H2CO Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[11]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[11] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[11]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_uv5_so2">
+    <cd:Array>
+      <cd:Description>SO2 Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[12]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[12] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[12]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_uv6_oclo">
+    <cd:Array>
+      <cd:Description>OClO Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[13]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[13] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[13]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_uv7_spare">
+    <cd:Array>
+      <cd:Description>Spare Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[14]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[14] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[14]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_ir0_h2o">
+    <cd:Array>
+      <cd:Description>H2O Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[15]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[15] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[15]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_ir1_ch4">
+    <cd:Array>
+      <cd:Description>CH4 Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[16]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[16] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[16]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_ir2_n2o">
+    <cd:Array>
+      <cd:Description>N2 Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[17]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[17] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[17]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_ir3_co">
+    <cd:Array>
+      <cd:Description>CO Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[18]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[18] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[18]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_ir4_co2">
+    <cd:Array>
+      <cd:Description>CO2 Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[19]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[19] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[19]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_ir5_spare">
+    <cd:Array>
+      <cd:Description>Spare Nadir Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[20]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_nadir_v1"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[20] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[20]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_pth">
+    <cd:Array>
+      <cd:Description>PTH Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[21]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[21] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[21]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_uv0_o3">
+    <cd:Array>
+      <cd:Description>O3 Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[22]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[22] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[22]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_uv1_no2">
+    <cd:Array>
+      <cd:Description>NO2 Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[23]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[23] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[23]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_uv2_o3">
+    <cd:Array>
+      <cd:Description>O3 Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[24]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[24] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[24]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_uv3_bro">
+    <cd:Array>
+      <cd:Description>BrO Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[25]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[25] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[25]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_uv4_h2co">
+    <cd:Array>
+      <cd:Description>H2CO Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[26]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[26] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[26]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_uv5_so2">
+    <cd:Array>
+      <cd:Description>SO2 Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[27]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[27] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[27]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_uv6_oclo">
+    <cd:Array>
+      <cd:Description>OClO Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[28]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[28] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[28]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_uv7_spare">
+    <cd:Array>
+      <cd:Description>Spare Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[29]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[29] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[29]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_ir0_h2o">
+    <cd:Array>
+      <cd:Description>H2O Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[30]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[30] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[30]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_ir1_ch4">
+    <cd:Array>
+      <cd:Description>CH4 Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[31]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[31] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[31]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_ir2_n2o">
+    <cd:Array>
+      <cd:Description>N2O Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[32]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[32] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[32]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_ir3_co">
+    <cd:Array>
+      <cd:Description>CO Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[33]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[33] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[33]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="lim_ir4_spare">
+    <cd:Array>
+      <cd:Description>Spare Limb Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[34]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[34] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[34]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_pth">
+    <cd:Array>
+      <cd:Description>PTH Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[35]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[35] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[35]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_uv0_o3">
+    <cd:Array>
+      <cd:Description>O3 Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[36]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[36] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[36]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_uv1_no2">
+    <cd:Array>
+      <cd:Description>NO2 Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[37]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[37] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[37]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_uv2_o3">
+    <cd:Array>
+      <cd:Description>O3 Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[38]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[38] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[38]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_uv3_bro">
+    <cd:Array>
+      <cd:Description>BrO Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[39]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[39] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[39]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_uv4_h2co">
+    <cd:Array>
+      <cd:Description>H2CO Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[40]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[40] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[40]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_uv5_so2">
+    <cd:Array>
+      <cd:Description>SO2 Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[41]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[41] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[41]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_uv6_oclo">
+    <cd:Array>
+      <cd:Description>OClO Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[42]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[42] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[42]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_uv7_spare">
+    <cd:Array>
+      <cd:Description>Spare Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[43]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[43] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[43]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_ir0_h2o">
+    <cd:Array>
+      <cd:Description>H2O Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[44]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[44] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[44]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_ir1_ch4">
+    <cd:Array>
+      <cd:Description>CH4 Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[45]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[45] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[45]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_ir2_n2o">
+    <cd:Array>
+      <cd:Description>N2 Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[46]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[46] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[46]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_ir3_co">
+    <cd:Array>
+      <cd:Description>CO Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[47]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[47] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[47]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="occ_ir4_spare">
+    <cd:Array>
+      <cd:Description>Spare Occultation Fitting Window MDS</cd:Description>
+      <cd:Dimension><![CDATA[$num_dsr[48]]]></cd:Dimension>
+      <cd:NamedType id="SCI_OL__2P_MDSR_limb_occultation"/>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[48] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[48]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="nad_profile_o3">
+    <cd:Array>
+      <cd:Description>O3 Nadir Profile MDS (not properly defined yet)</cd:Description>
+      <cd:Dimension><![CDATA[$ds_size[49]]]></cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+    <cd:Available><![CDATA[$ds_available[49] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[49]]]></cd:BitOffset>
+  </cd:Field>
+</cd:Record>
+  <cd:ProductVariable name="num_dsd">
+    <cd:Init><![CDATA[$num_dsd = int(/mph/num_dsd)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="num_ds">
+    <cd:Init><![CDATA[$num_ds = 50]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_to_dsd_index">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[$ds_to_dsd_index[0] = index(/dsd, str(./ds_name) == "SUMMARY_QUALITY             "); $ds_to_dsd_index[1] = index(/dsd, str(./ds_name) == "STATE_GEOLOCATION           "); $ds_to_dsd_index[2] = index(/dsd, str(./ds_name) == "STATIC_PARAM                "); $ds_to_dsd_index[3] = index(/dsd, str(./ds_name) == "STATES                      "); $ds_to_dsd_index[4] = index(/dsd, str(./ds_name) == "GEOLOCATION_NADIR           "); $ds_to_dsd_index[5] = index(/dsd, str(./ds_name) == "GEOLOCATION_LIMB            "); $ds_to_dsd_index[6] = index(/dsd, str(./ds_name) == "CLOUDS_AEROSOL              "); $ds_to_dsd_index[7] = index(/dsd, str(./ds_name) == "NAD_UV0_O3                  "); $ds_to_dsd_index[8] = index(/dsd, str(./ds_name) == "NAD_UV1_NO2                 "); $ds_to_dsd_index[9] = index(/dsd, str(./ds_name) == "NAD_UV2_O3                  "); $ds_to_dsd_index[10] = index(/dsd, str(./ds_name) == "NAD_UV3_BRO                 "); $ds_to_dsd_index[11] = index(/dsd, str(./ds_name) == "NAD_UV4_H2CO                "); $ds_to_dsd_index[12] = index(/dsd, str(./ds_name) == "NAD_UV5_SO2                 "); $ds_to_dsd_index[13] = index(/dsd, str(./ds_name) == "NAD_UV6_OCLO                "); $ds_to_dsd_index[14] = index(/dsd, str(./ds_name) == "NAD_UV7_SPARE               "); $ds_to_dsd_index[15] = index(/dsd, str(./ds_name) == "NAD_IR0_H2O                 "); $ds_to_dsd_index[16] = index(/dsd, str(./ds_name) == "NAD_IR1_CH4                 "); $ds_to_dsd_index[17] = index(/dsd, str(./ds_name) == "NAD_IR2_N2O                 "); $ds_to_dsd_index[18] = index(/dsd, str(./ds_name) == "NAD_IR3_CO                  "); $ds_to_dsd_index[19] = index(/dsd, str(./ds_name) == "NAD_IR4_CO2                 "); $ds_to_dsd_index[20] = index(/dsd, str(./ds_name) == "NAD_IR5_SPARE               "); $ds_to_dsd_index[21] = index(/dsd, str(./ds_name) == "LIM_PTH                     "); $ds_to_dsd_index[22] = index(/dsd, str(./ds_name) == "LIM_UV0_O3                  "); $ds_to_dsd_index[23] = index(/dsd, str(./ds_name) == "LIM_UV1_NO2                 "); $ds_to_dsd_index[24] = index(/dsd, str(./ds_name) == "LIM_UV2_O3                  "); $ds_to_dsd_index[25] = index(/dsd, str(./ds_name) == "LIM_UV3_BRO                 "); $ds_to_dsd_index[26] = index(/dsd, str(./ds_name) == "LIM_UV4_H2CO                "); $ds_to_dsd_index[27] = index(/dsd, str(./ds_name) == "LIM_UV5_SO2                 "); $ds_to_dsd_index[28] = index(/dsd, str(./ds_name) == "LIM_UV6_OCLO                "); $ds_to_dsd_index[29] = index(/dsd, str(./ds_name) == "LIM_UV7_SPARE               "); $ds_to_dsd_index[30] = index(/dsd, str(./ds_name) == "LIM_IR0_H2O                 "); $ds_to_dsd_index[31] = index(/dsd, str(./ds_name) == "LIM_IR1_CH4                 "); $ds_to_dsd_index[32] = index(/dsd, str(./ds_name) == "LIM_IR2_N2O                 "); $ds_to_dsd_index[33] = index(/dsd, str(./ds_name) == "LIM_IR3_CO                  "); $ds_to_dsd_index[34] = index(/dsd, str(./ds_name) == "LIM_IR4_SPARE               "); $ds_to_dsd_index[35] = index(/dsd, str(./ds_name) == "OCC_PTH                     "); $ds_to_dsd_index[36] = index(/dsd, str(./ds_name) == "OCC_UV0_O3                  "); $ds_to_dsd_index[37] = index(/dsd, str(./ds_name) == "OCC_UV1_NO2                 "); $ds_to_dsd_index[38] = index(/dsd, str(./ds_name) == "OCC_UV2_O3                  "); $ds_to_dsd_index[39] = index(/dsd, str(./ds_name) == "OCC_UV3_BRO                 "); $ds_to_dsd_index[40] = index(/dsd, str(./ds_name) == "OCC_UV4_H2CO                "); $ds_to_dsd_index[41] = index(/dsd, str(./ds_name) == "OCC_UV5_SO2                 "); $ds_to_dsd_index[42] = index(/dsd, str(./ds_name) == "OCC_UV6_OCLO                "); $ds_to_dsd_index[43] = index(/dsd, str(./ds_name) == "OCC_UV7_SPARE               "); $ds_to_dsd_index[44] = index(/dsd, str(./ds_name) == "OCC_IR0_H2O                 "); $ds_to_dsd_index[45] = index(/dsd, str(./ds_name) == "OCC_IR1_CH4                 "); $ds_to_dsd_index[46] = index(/dsd, str(./ds_name) == "OCC_IR2_N2O                 "); $ds_to_dsd_index[47] = index(/dsd, str(./ds_name) == "OCC_IR3_CO                  "); $ds_to_dsd_index[48] = index(/dsd, str(./ds_name) == "OCC_IR4_SPARE               "); $ds_to_dsd_index[49] = index(/dsd, str(./ds_name) == "NAD_PROFILE_O3              ")]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_available">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $ds_available[i] = if($ds_to_dsd_index[i] != -1 && !(bytes(/dsd[$ds_to_dsd_index[i]]/filename, 8) == "NOT USED"), 1, 0)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_offset">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $ds_offset[i] = 8 * int(/dsd[$ds_to_dsd_index[i]]/ds_offset)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_size">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $ds_size[i] = 8 * int(/dsd[$ds_to_dsd_index[i]]/ds_size)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="num_dsr">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $num_dsr[i] = int(/dsd[$ds_to_dsd_index[i]]/num_dsr)]]></cd:Init>
+  </cd:ProductVariable>
+</cd:ProductDefinition>

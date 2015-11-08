@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_CS2_BL2_FM2_UC2_AX_GADS" last-modified="2008-10-27" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="mol_name">
+    <cd:Text format="ascii">
+      <cd:Description>Molecule name</cd:Description>
+      <cd:ByteSize>5</cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="num_atm_lev">
+    <cd:Integer>
+      <cd:Description>Number of atmospheric levels</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_spec_seg">
+    <cd:Integer>
+      <cd:Description>Number of spectral segments</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="max_num_temp">
+    <cd:Integer>
+      <cd:Description>Maximum number of temperatures</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="max_num_coeff">
+    <cd:Integer>
+      <cd:Description>Maximum number of coefficients</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_temp_seg">
+    <cd:Array>
+      <cd:Description>Number of temperatures per segment</cd:Description>
+      <cd:Dimension><![CDATA[if(int(../max_num_temp) != 0, int(../num_spec_seg), 0)]]></cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_coeff_seg">
+    <cd:Array>
+      <cd:Description>Number of coefficients per segment</cd:Description>
+      <cd:Dimension><![CDATA[if(int(../max_num_coeff) != 0, int(../num_spec_seg), 0)]]></cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_spec_entries">
+    <cd:Array>
+      <cd:Description>Number of spectral entries per segment</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_spec_seg)]]></cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="type_form_coeff">
+    <cd:Array>
+      <cd:Description>Type of formula for coefficients</cd:Description>
+      <cd:Dimension><![CDATA[if(int(../max_num_coeff) != 0, 1, 0)]]></cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="type_wvlen_info">
+    <cd:Integer>
+      <cd:Description>Type of wavelength information</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_grid_1_seg">
+    <cd:Array>
+      <cd:Description>Temperature grid for first segment</cd:Description>
+      <cd:Dimension><![CDATA[if(int(../max_num_temp) != 0, int(../max_num_temp), 0)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>K</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="height_grid">
+    <cd:Array>
+      <cd:Description>Height grid</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_atm_lev)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>km</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="wvlen_grid_spec_seg_type_1">
+    <cd:Array>
+      <cd:Description>Wavelength grid per spectral segment</cd:Description>
+      <cd:Dimension><![CDATA[if(int(../type_wvlen_info) == 1, int(../num_spec_seg), 0)]]></cd:Dimension>
+      <cd:Array>
+        <cd:Dimension><![CDATA[if(int(../../max_num_temp) != 0, if(int(../../num_temp_seg[index(:)]) != 0, int(../../num_temp_seg[index(:)]), 1), 1)]]></cd:Dimension>
+        <cd:Dimension><![CDATA[int(../../num_spec_entries[index(:)])]]></cd:Dimension>
+        <cd:Float>
+          <cd:Unit>nm</cd:Unit>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+        </cd:Float>
+      </cd:Array>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="wvlen_grid_spec_seg_type_2">
+    <cd:Array>
+      <cd:Description>Wavelength grid per spectral segment</cd:Description>
+      <cd:Dimension><![CDATA[if(int(../type_wvlen_info) == 2, int(../num_spec_seg), 0)]]></cd:Dimension>
+      <cd:Record>
+        <cd:Field name="wl_start">
+          <cd:Float>
+            <cd:Description>Start wavelength</cd:Description>
+            <cd:Unit>nm</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="wl_step">
+          <cd:Float>
+            <cd:Description>Wavelength step</cd:Description>
+            <cd:Unit>nm</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="wvlen_grid_spec_seg_type_3">
+    <cd:Array>
+      <cd:Description>Wavelength grid per spectral segment</cd:Description>
+      <cd:Dimension><![CDATA[if(int(../type_wvlen_info) == 3, int(../num_spec_seg), 0)]]></cd:Dimension>
+      <cd:Record>
+        <cd:Field name="wvnum">
+          <cd:Float>
+            <cd:Description>Start wave number</cd:Description>
+            <cd:Unit>1/cm</cd:Unit>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="wvnum_step">
+          <cd:Float>
+            <cd:Description>Wave number step</cd:Description>
+            <cd:Unit>1/cm</cd:Unit>
+            <cd:BitSize>64</cd:BitSize>
+            <cd:NativeType>double</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="c_sec_spec_seg">
+    <cd:Array>
+      <cd:Description>Cross-sections for spectral segments</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_spec_seg)]]></cd:Dimension>
+      <cd:Array>
+        <cd:Dimension><![CDATA[if(int(../../num_atm_lev) != 0, int(../../num_atm_lev), 1)]]></cd:Dimension>
+        <cd:Dimension><![CDATA[if(int(../../max_num_temp) != 0, if(int(../../num_temp_seg[index(:)]) != 0, int(../../num_temp_seg[index(:)]), 1), 1)]]></cd:Dimension>
+        <cd:Dimension><![CDATA[int(../../num_spec_entries[index(:)])]]></cd:Dimension>
+        <cd:Float>
+          <cd:Unit>cm5/molecule2</cd:Unit>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+        </cd:Float>
+      </cd:Array>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="c_sec_coeff_spec_seg">
+    <cd:Array>
+      <cd:Description>Cross-section coefficients for spectral segment</cd:Description>
+      <cd:Dimension><![CDATA[if(int(../max_num_coeff) != 0, int(../num_spec_seg), 0)]]></cd:Dimension>
+      <cd:Array>
+        <cd:Dimension><![CDATA[int(../../num_coeff_seg[index(:)])]]></cd:Dimension>
+        <cd:Dimension><![CDATA[int(../../num_spec_entries[index(:)])]]></cd:Dimension>
+        <cd:Float>
+          <cd:BitSize>32</cd:BitSize>
+          <cd:NativeType>float</cd:NativeType>
+        </cd:Float>
+      </cd:Array>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

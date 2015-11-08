@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_SF2_AX_GADS_glit_alb" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="num_glit_alb_sun_zen">
+    <cd:Integer>
+      <cd:Description>Number of glitter albedo sun zenith angles</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_glit_alb_wvlen">
+    <cd:Integer>
+      <cd:Description>Number of glitter albedo wavelengths</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="glit_alb_sun_zen">
+    <cd:Array>
+      <cd:Description>Glitter albedo sun zenith angles</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_glit_alb_sun_zen)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="glit_alb_wvlen">
+    <cd:Array>
+      <cd:Description>Glitter albedo wavelengths</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_glit_alb_wvlen)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>nm</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="glit_alb">
+    <cd:Array>
+      <cd:Description>Glitter albedo</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_glit_alb_wvlen)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_glit_alb_sun_zen)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NLC_1P_MDSR_nadir" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start time of scan phase</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="dsr_length">
+    <cd:Integer>
+      <cd:Description>Length of this DSR in bytes</cd:Description>
+      <cd:Unit>bytes</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 if empty DSR)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="orb_phase">
+    <cd:Float>
+      <cd:Description>Orbit phase after eclipse of the state (range: 0-1)</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="meas_cat">
+    <cd:Integer>
+      <cd:Description>Measurement Category</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="state_id">
+    <cd:Integer>
+      <cd:Description>State ID</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="clus_id">
+    <cd:Integer>
+      <cd:Description>Cluster ID for this record</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_obs">
+    <cd:Integer>
+      <cd:Description>Number of observations of this cluster, Nobs</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_pixels">
+    <cd:Integer>
+      <cd:Description>Number of pixels in this cluster, Npixels</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="rad_units_flag">
+    <cd:Integer>
+      <cd:Description>Pixel Units Indicator (-1 for radiance units photons/s.cm2.nm.sr, 0 for BU)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pixel_ids">
+    <cd:Array>
+      <cd:Description>Pixel IDs for cluster</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_pixels)]]></cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="pixel_wavelength">
+    <cd:Array>
+      <cd:Description>Wavelength for pixels in this cluster</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_pixels)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>nm</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="pixel_wavelength_error">
+    <cd:Array>
+      <cd:Description>Wavelength calibration error for pixels in this cluster</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_pixels)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>nm</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="observations">
+    <cd:Array>
+      <cd:Description>Signal values for each detector element, for each observation (unit: BU or photons/s.cm2.nm.sr)</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_obs)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_pixels)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="observation_errors">
+    <cd:Array>
+      <cd:Description>Signal error values for each detector element, for each observation (unit: BU or photons/s.cm2.nm.sr)</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_obs)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_pixels)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="geo">
+    <cd:Array>
+      <cd:Description>Geolocation</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_obs)]]></cd:Dimension>
+      <cd:NamedType id="SCI_NL__1P_GeoN"/>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

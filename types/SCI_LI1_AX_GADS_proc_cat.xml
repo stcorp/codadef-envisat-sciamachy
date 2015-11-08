@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_LI1_AX_GADS_proc_cat" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="meas_category">
+    <cd:Integer>
+      <cd:Description>Measurement category</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="proc_category">
+    <cd:Integer>
+      <cd:Description>Processing category (0=other, 1=nadir, 2=limb/occultation, 3=sun diffuser, 4=SLS, 5=WLS, 6=dark)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

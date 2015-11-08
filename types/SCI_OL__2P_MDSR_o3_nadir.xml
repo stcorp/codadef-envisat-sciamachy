@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_OL__2P_MDSR_o3_nadir" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start Time of DSR</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 if empty DSR)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="integr_time">
+    <cd:Integer>
+      <cd:Description>Integration time for this DSR</cd:Description>
+      <cd:Unit>1/16 s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="16.000000">
+        <cd:Unit>s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

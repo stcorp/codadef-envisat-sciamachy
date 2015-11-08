@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<cd:Record format="ascii" name="Orbit_Vectors_MDSR" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="utc_time">
+    <cd:Time timeformat="ascii_envisat_datetime">
+      <cd:Description>UTC of Orbit State Vector</cd:Description>
+      <cd:Mapping string="                           " value="nan"/>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="blank_1">
+    <cd:Text>
+      <cd:Description>ASCII blank space character</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>char</cd:NativeType>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="delta_ut1">
+    <cd:Float>
+      <cd:Description>Delta UT1 = UT1-UTC</cd:Description>
+      <cd:Unit>s</cd:Unit>
+      <cd:ByteSize>8</cd:ByteSize>
+      <cd:NativeType>double</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="blank_2">
+    <cd:Text>
+      <cd:Description>ASCII blank space character</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>char</cd:NativeType>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="abs_orbit">
+    <cd:Integer>
+      <cd:Description>Absolute Orbit number</cd:Description>
+      <cd:ByteSize>6</cd:ByteSize>
+      <cd:NativeType>int32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="blank_3">
+    <cd:Text>
+      <cd:Description>ASCII blank space character</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>char</cd:NativeType>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="x_pos">
+    <cd:Float>
+      <cd:Description>X position in Earth fixed reference frame</cd:Description>
+      <cd:Unit>m</cd:Unit>
+      <cd:ByteSize>12</cd:ByteSize>
+      <cd:NativeType>double</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="blank_4">
+    <cd:Text>
+      <cd:Description>ASCII blank space character</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>char</cd:NativeType>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="y_pos">
+    <cd:Float>
+      <cd:Description>Y position in Earth fixed reference frame</cd:Description>
+      <cd:Unit>m</cd:Unit>
+      <cd:ByteSize>12</cd:ByteSize>
+      <cd:NativeType>double</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="blank_5">
+    <cd:Text>
+      <cd:Description>ASCII blank space character</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>char</cd:NativeType>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="z_pos">
+    <cd:Float>
+      <cd:Description>Z position in Earth fixed reference frame</cd:Description>
+      <cd:Unit>m</cd:Unit>
+      <cd:ByteSize>12</cd:ByteSize>
+      <cd:NativeType>double</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="blank_6">
+    <cd:Text>
+      <cd:Description>ASCII blank space character</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>char</cd:NativeType>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="x_vel">
+    <cd:Float>
+      <cd:Description>X velocity relative to Earth fixed reference frame</cd:Description>
+      <cd:Unit>m/s</cd:Unit>
+      <cd:ByteSize>12</cd:ByteSize>
+      <cd:NativeType>double</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="blank_7">
+    <cd:Text>
+      <cd:Description>ASCII blank space character</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>char</cd:NativeType>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="y_vel">
+    <cd:Float>
+      <cd:Description>Y velocity relative to Earth fixed reference frame</cd:Description>
+      <cd:Unit>m/s</cd:Unit>
+      <cd:ByteSize>12</cd:ByteSize>
+      <cd:NativeType>double</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="blank_8">
+    <cd:Text>
+      <cd:Description>ASCII blank space character</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>char</cd:NativeType>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="z_vel">
+    <cd:Float>
+      <cd:Description>Z velocity relative to Earth fixed reference frame</cd:Description>
+      <cd:Unit>m/s</cd:Unit>
+      <cd:ByteSize>12</cd:ByteSize>
+      <cd:NativeType>double</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="blank_9">
+    <cd:Text>
+      <cd:Description>ASCII blank space character</cd:Description>
+      <cd:FixedValue> </cd:FixedValue>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>char</cd:NativeType>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="qual_flags">
+    <cd:Array>
+      <cd:Description>Quality Flags (TBD by ESA)</cd:Description>
+      <cd:Dimension>6</cd:Dimension>
+      <cd:Text>
+        <cd:ByteSize>1</cd:ByteSize>
+        <cd:NativeType>char</cd:NativeType>
+      </cd:Text>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="newline_char">
+    <cd:Text>
+      <cd:Description>ASCII newline character</cd:Description>
+      <cd:FixedValue>\n</cd:FixedValue>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>char</cd:NativeType>
+    </cd:Text>
+    <cd:Hidden/>
+  </cd:Field>
+</cd:Record>

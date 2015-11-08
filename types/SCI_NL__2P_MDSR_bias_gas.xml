@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__2P_MDSR_bias_gas" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start Time of DSR</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="dsr_length">
+    <cd:Integer>
+      <cd:Description>Length of this DSR in bytes</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 if empty DSR)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="integr_time">
+    <cd:Integer>
+      <cd:Description>Integration time for this DSR</cd:Description>
+      <cd:Unit>1/16 s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="16.000000">
+        <cd:Unit>s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_geophy_param_fit">
+    <cd:Integer>
+      <cd:Description>Number of geophysical parameters fitted</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_seg_fit_win">
+    <cd:Integer>
+      <cd:Description>Number of segments in fitting window</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ht_val_and_err">
+    <cd:Array>
+      <cd:Description>Height value and error</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>km</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="flag_ht_var_usg">
+    <cd:Integer>
+      <cd:Description>Flag describing height variable usage</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="trc_gas_vcd">
+    <cd:Float>
+      <cd:Description>Trace-gas vertical column density</cd:Description>
+      <cd:Unit>molecules/cm2</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="err_vcd">
+    <cd:Float>
+      <cd:Description>Error on vertical column density</cd:Description>
+      <cd:Unit>%</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="fit_fc_param">
+    <cd:Float>
+      <cd:Description>Fitted first-closure parameter</cd:Description>
+      <cd:Unit>1/sr</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="err_fit_fc_param">
+    <cd:Float>
+      <cd:Description>Error on fitted first-closure parameter</cd:Description>
+      <cd:Unit>%</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="rms_good_fit_win">
+    <cd:Array>
+      <cd:Description>RMS, Chi^2, goodness-of-fit, and transmittance cut-off for the fitting window</cd:Description>
+      <cd:Dimension>4</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="iter_num_fit_win">
+    <cd:Integer>
+      <cd:Description>Iteration number for the fitting window</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cross_cor_param">
+    <cd:Array>
+      <cd:Description>Cross correlation parameters</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_geophy_param_fit) * (int(../num_geophy_param_fit) - 1) / 2]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="flag_bias_vcd_fit_flags">
+    <cd:Integer>
+      <cd:Description>Flag describing the BIAS VCD fitting</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

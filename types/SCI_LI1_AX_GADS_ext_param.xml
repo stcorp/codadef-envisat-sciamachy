@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_LI1_AX_GADS_ext_param" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="state_num">
+    <cd:Integer>
+      <cd:Description>State Number</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="delay_time_bcps">
+    <cd:Float>
+      <cd:Description>Delay time of measurement after BCPS start</cd:Description>
+      <cd:Unit>ms</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="setup_integr_time">
+    <cd:Float>
+      <cd:Description>State set-up integration time</cd:Description>
+      <cd:Unit>ms</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="spare_1">
+    <cd:Raw>
+      <cd:Description>Spare</cd:Description>
+      <cd:BitSize>24</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+</cd:Record>

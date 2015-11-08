@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_OL__2P_MDSR_nadir_v0" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start Time of DSR</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="dsr_length">
+    <cd:Integer>
+      <cd:Description>Length of this DSR in bytes</cd:Description>
+      <cd:Unit>bytes</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 if empty DSR)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="integr_time">
+    <cd:Integer>
+      <cd:Description>Integration time for this DSR</cd:Description>
+      <cd:Unit>1/16 s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="16.000000">
+        <cd:Unit>s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_vcd">
+    <cd:Integer>
+      <cd:Description>Number of vertical column densities</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="vcd">
+    <cd:Array>
+      <cd:Description>Vertical column density (VCD)</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_vcd)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>molecules/cm2</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="vcd_err">
+    <cd:Array>
+      <cd:Description>Error on the VCD above</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_vcd)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>%</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="flag_vcd_flags">
+    <cd:Integer>
+      <cd:Description>Flag describing the VCD output above. Bit description = 0: no - yes extended field-of-view calculation; 1: no - yes maximum SZA reached, VCD computation impossible; 2: no - yes no weighting of AMFs over footprint; 3: no - yes linear weighting of AMFs over footprint; 4: no - yes parabolic weighting of AMFs over footprint; 5-15: not used at present</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="slant_col_den">
+    <cd:Float>
+      <cd:Description>Effective slant column density of the main parameter</cd:Description>
+      <cd:Unit>molecules/cm2</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="err_slant_col">
+    <cd:Float>
+      <cd:Description>Error on effective slant column density above</cd:Description>
+      <cd:Unit>%</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="num_linear_param">
+    <cd:Integer>
+      <cd:Description>Number of linear fitted parameters</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_non_linear_param">
+    <cd:Integer>
+      <cd:Description>Number of non-linear fitted parameters</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="linear_fit_param">
+    <cd:Array>
+      <cd:Description>Linear fitted parameters</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_linear_param)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="linear_fit_param_err">
+    <cd:Array>
+      <cd:Description>Error on linear fitted parameters</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_linear_param)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>%</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="linear_fit_cross_corr">
+    <cd:Array>
+      <cd:Description>Cross-correlation matrix entries of the linear fit</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_linear_param) * (int(../num_linear_param) - 1) / 2]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="non_linear_fit_param">
+    <cd:Array>
+      <cd:Description>Non-linear fitted parameters</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_non_linear_param)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="non_linear_fit_param_err">
+    <cd:Array>
+      <cd:Description>Error on non-linear fitted parameters</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_non_linear_param)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>%</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="non_linear_fit_cross_corr">
+    <cd:Array>
+      <cd:Description>Cross-correlation entries of the non-linear fit</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_non_linear_param) * (int(../num_non_linear_param) - 1) / 2]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="rms_fit">
+    <cd:Float>
+      <cd:Description>RMS of fit for the fitting window</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="chi_2_fit">
+    <cd:Float>
+      <cd:Description>Chi^2 of the fit</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="goodness_fit">
+    <cd:Float>
+      <cd:Description>Goodness of the fit</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="iter_num">
+    <cd:Integer>
+      <cd:Description>Iteration number for the fitting window</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="fit_flags">
+    <cd:Integer>
+      <cd:Description>Flags describing the above data for linear and non-linear fit. Bit definition = 0: no - yes smoothing of measurements; 1: no - yes error weighting of fitting; 2: no - yes use of ratioed measurements; 3: no - yes use of pre-convoluted cross-sections; 4: no - yes convolution of cross-sections; 5: no - yes convolution on measurement grid; 6: literature - SCIAMACHY cross-sections used; 7: linear - non-linear fitting; 8-15: not used at present</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="amf_gr">
+    <cd:Float>
+      <cd:Description>AMF to ground for species</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="amf_gr_err">
+    <cd:Float>
+      <cd:Description>Error on AMF to ground</cd:Description>
+      <cd:Unit>%</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="amf_cl">
+    <cd:Float>
+      <cd:Description>AMF to cloud-top for species</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="amf_cl_err">
+    <cd:Float>
+      <cd:Description>Error on AMF to cloud-top</cd:Description>
+      <cd:Unit>%</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="flag_amf_flags">
+    <cd:Integer>
+      <cd:Description>Flags describing the AMF data above: Bit definition = 0: clear - clear &amp; cloud look-up; 1: one AMF value - extended field-of-view; 2: continental - maritime aerosol present; 3: no - yes maximum SZA exceeded; 4-15: not used at present</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="temp_ref">
+    <cd:Float>
+      <cd:Description>Temperature of reference spectrum</cd:Description>
+      <cd:Unit>K</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+</cd:Record>

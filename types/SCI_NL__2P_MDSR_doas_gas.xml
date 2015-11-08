@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__2P_MDSR_doas_gas" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start Time of DSR</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="dsr_length">
+    <cd:Integer>
+      <cd:Description>Length of this DSR in bytes</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 if empty DSR)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="integr_time">
+    <cd:Integer>
+      <cd:Description>Integration time for this DSR</cd:Description>
+      <cd:Unit>1/16 s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="16.000000">
+        <cd:Unit>s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_fit_para">
+    <cd:Integer>
+      <cd:Description>Number of fitting parameters</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="vcd">
+    <cd:Float>
+      <cd:Description>Vertical column density (VCD)</cd:Description>
+      <cd:Unit>molecules/cm2</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="vcd_err">
+    <cd:Float>
+      <cd:Description>Error on the VCD above</cd:Description>
+      <cd:Unit>%</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="flag_vcd_flags">
+    <cd:Integer>
+      <cd:Description>Flag describing the VCD output above</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="slant_col_den">
+    <cd:Float>
+      <cd:Description>Slant column density</cd:Description>
+      <cd:Unit>molecules/cm2</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="err_slant_col">
+    <cd:Float>
+      <cd:Description>Error on slant column density</cd:Description>
+      <cd:Unit>%</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="rms_chi_2_gof">
+    <cd:Array>
+      <cd:Description>RMS, Chi^2, and goodness-of-fit for the fitting window</cd:Description>
+      <cd:Dimension>3</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="iter_num_fit_win">
+    <cd:Integer>
+      <cd:Description>Iteration number for the fitting window</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cross_corr_para">
+    <cd:Array>
+      <cd:Description>Cross-correlation parameters</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_fit_para) * (int(../num_fit_para) - 1) / 2]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="flag_slant_col_flags">
+    <cd:Integer>
+      <cd:Description>Flag describing the above slant column</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="amf_gr">
+    <cd:Float>
+      <cd:Description>AMF to ground for species</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="amf_cl">
+    <cd:Float>
+      <cd:Description>AMF to cloud-top for species</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="refl_ground">
+    <cd:Float>
+      <cd:Description>Reflectance from ground</cd:Description>
+      <cd:Unit>1/sr</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="refl_cloud_top">
+    <cd:Float>
+      <cd:Description>Reflectance from cloud top</cd:Description>
+      <cd:Unit>1/sr</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="measured_refl">
+    <cd:Float>
+      <cd:Description>Measured reflectance</cd:Description>
+      <cd:Unit>1/sr</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="flag_amf_flags">
+    <cd:Integer>
+      <cd:Description>Flag describing the above AMF</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

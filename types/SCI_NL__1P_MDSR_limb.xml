@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_MDSR_limb" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start time of DSR</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="dsr_length">
+    <cd:Integer>
+      <cd:Description>Length of this DSR in bytes</cd:Description>
+      <cd:Unit>bytes</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 if empty DSR)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="scale_factor">
+    <cd:Array>
+      <cd:Description>Scale factor for the straylight values in the signal compound type per channel</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="sat_flag">
+    <cd:Array>
+      <cd:Description>Saturation Flags</cd:Description>
+      <cd:Dimension><![CDATA[int(/states[$limb_states_index[index(:/..)]]/intg_times[0]) / int(/states[$limb_states_index[index(:/..)]]/intg_times[int(/states[$limb_states_index[index(:/..)]]/num_diff_intg_times) - 1])]]></cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="red_grass_flag">
+    <cd:Array>
+      <cd:Description>Red Grass flags</cd:Description>
+      <cd:Dimension><![CDATA[int(/states[$limb_states_index[index(:/..)]]/num_clus)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(/states[$limb_states_index[index(:/..)]]/intg_times[0]) / int(/states[$limb_states_index[index(:/..)]]/intg_times[int(/states[$limb_states_index[index(:/..)]]/num_diff_intg_times) - 1])]]></cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="sun_glint_flag">
+    <cd:Array>
+      <cd:Description>Sun Glint / Rainbow flags (all flags are set to zero if not used)</cd:Description>
+      <cd:Dimension><![CDATA[int(/states[$limb_states_index[index(:/..)]]/intg_times[0]) / int(/states[$limb_states_index[index(:/..)]]/intg_times[int(/states[$limb_states_index[index(:/..)]]/num_diff_intg_times) - 1])]]></cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="geo">
+    <cd:Array>
+      <cd:Description>Geolocation</cd:Description>
+      <cd:Dimension><![CDATA[int(/states[$limb_states_index[index(:/..)]]/intg_times[0]) / int(/states[$limb_states_index[index(:/..)]]/intg_times[int(/states[$limb_states_index[index(:/..)]]/num_diff_intg_times) - 1])]]></cd:Dimension>
+      <cd:NamedType id="SCI_NL__1P_GeoL"/>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="l0_header">
+    <cd:Array>
+      <cd:Description>Level 0 detector module data packet headers</cd:Description>
+      <cd:Dimension><![CDATA[int(/states[$limb_states_index[index(:/..)]]/intg_times[0]) / int(/states[$limb_states_index[index(:/..)]]/intg_times[int(/states[$limb_states_index[index(:/..)]]/num_diff_intg_times) - 1])]]></cd:Dimension>
+      <cd:NamedType id="SCI_NL__1P_L0Hdr"/>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="int_pmd">
+    <cd:Array>
+      <cd:Description>Integrated PMD values</cd:Description>
+      <cd:Dimension><![CDATA[int(/states[$limb_states_index[index(:/..)]]/intg_times[0])]]></cd:Dimension>
+      <cd:Dimension>7</cd:Dimension>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU.s</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="frac_pol">
+    <cd:Array>
+      <cd:Description>Fractional polarization values</cd:Description>
+      <cd:Dimension><![CDATA[int(/states[$limb_states_index[index(:/..)]]/num_pol) / int(/states[$limb_states_index[index(:/..)]]/num_pol_per_intg[0])]]></cd:Dimension>
+      <cd:NamedType id="SCI_NL__1P_PolV"/>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="clus_dat">
+    <cd:Array>
+      <cd:Description>Cluster data</cd:Description>
+      <cd:Dimension><![CDATA[int(/states[$limb_states_index[index(:/..)]]/num_clus)]]></cd:Dimension>
+      <cd:Record>
+        <cd:Field name="sig">
+          <cd:Array>
+            <cd:Description>Detector signal with straylight not co-added</cd:Description>
+            <cd:Dimension><![CDATA[if(int(/states[$limb_states_index[index(:/../../..)]]/clus_config[index(:/..)]/clus_data_type) == 1, int(/states[$limb_states_index[index(:/../../..)]]/clus_config[index(:/..)]/num_readouts), 0)]]></cd:Dimension>
+            <cd:Dimension><![CDATA[int(/states[$limb_states_index[index(:/../../..)]]/clus_config[index(:/..)]/clus_len)]]></cd:Dimension>
+            <cd:Record>
+              <cd:Field name="mem_eff_cor">
+                <cd:Integer>
+                  <cd:Description>Memory effect correction</cd:Description>
+                  <cd:Unit>BU</cd:Unit>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="signal">
+                <cd:Integer>
+                  <cd:Description>Signal value of one detector element</cd:Description>
+                  <cd:Unit>BU</cd:Unit>
+                  <cd:BitSize>16</cd:BitSize>
+                  <cd:NativeType>uint16</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="straylight">
+                <cd:Integer>
+                  <cd:Description>Straylight</cd:Description>
+                  <cd:Unit>1e-1 BU</cd:Unit>
+                  <cd:Conversion numerator="1.000000" denominator="10.000000">
+                    <cd:Unit>BU</cd:Unit>
+                  </cd:Conversion>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Array>
+        </cd:Field>
+        <cd:Field name="sigc">
+          <cd:Array>
+            <cd:Description>Detector signal with straylight co-added</cd:Description>
+            <cd:Dimension><![CDATA[if(int(/states[$limb_states_index[index(:/../../..)]]/clus_config[index(:/..)]/clus_data_type) == 2, int(/states[$limb_states_index[index(:/../../..)]]/clus_config[index(:/..)]/num_readouts), 0)]]></cd:Dimension>
+            <cd:Dimension><![CDATA[int(/states[$limb_states_index[index(:/../../..)]]/clus_config[index(:/..)]/clus_len)]]></cd:Dimension>
+            <cd:Record>
+              <cd:Field name="mem_eff_cor">
+                <cd:Integer>
+                  <cd:Description>Memory effect correction</cd:Description>
+                  <cd:Unit>BU</cd:Unit>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>int8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="signal">
+                <cd:Integer>
+                  <cd:Description>Signal value of one detector element</cd:Description>
+                  <cd:Unit>BU</cd:Unit>
+                  <cd:BitSize>24</cd:BitSize>
+                  <cd:NativeType>uint32</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+              <cd:Field name="straylight">
+                <cd:Integer>
+                  <cd:Description>Straylight</cd:Description>
+                  <cd:Unit>1e-1 BU</cd:Unit>
+                  <cd:Conversion numerator="1.000000" denominator="10.000000">
+                    <cd:Unit>BU</cd:Unit>
+                  </cd:Conversion>
+                  <cd:BitSize>8</cd:BitSize>
+                  <cd:NativeType>uint8</cd:NativeType>
+                </cd:Integer>
+              </cd:Field>
+            </cd:Record>
+          </cd:Array>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

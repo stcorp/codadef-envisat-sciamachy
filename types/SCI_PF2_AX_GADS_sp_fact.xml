@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_PF2_AX_GADS_sp_fact" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="num_atm_lev">
+    <cd:Integer>
+      <cd:Description>Number of atmospheric levels</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_sol_zen">
+    <cd:Integer>
+      <cd:Description>Number of reference solar zeniths</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ref_zen_ang">
+    <cd:Array>
+      <cd:Description>Reference zenith angles</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_sol_zen)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>degrees</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="slant_path_fact">
+    <cd:Array>
+      <cd:Description>Slant path factors</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_atm_lev)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_sol_zen)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

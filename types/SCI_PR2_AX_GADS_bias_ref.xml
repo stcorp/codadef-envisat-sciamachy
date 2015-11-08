@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_PR2_AX_GADS_bias_ref" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="num_atm_lev">
+    <cd:Integer>
+      <cd:Description>Number of atmospheric levels</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_mol">
+    <cd:Integer>
+      <cd:Description>Number of molecules</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mol_name">
+    <cd:Array format="ascii">
+      <cd:Description>Molecule names</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_mol)]]></cd:Dimension>
+      <cd:Text>
+        <cd:ByteSize>5</cd:ByteSize>
+        <cd:NativeType>string</cd:NativeType>
+      </cd:Text>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="atm_lev_alt">
+    <cd:Array>
+      <cd:Description>Atmospheric levels altitudes</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_atm_lev)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>km</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="pres_prof">
+    <cd:Array>
+      <cd:Description>Pressure profiles</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_atm_lev)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>hPa</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="temp_prof">
+    <cd:Array>
+      <cd:Description>Temperature profiles</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_atm_lev)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>K</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="mol_prof">
+    <cd:Array>
+      <cd:Description>Molecule profiles</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_mol)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_atm_lev)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>ppmv</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

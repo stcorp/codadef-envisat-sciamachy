@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_RC2_AX_GADS_aaia_table" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="num_ref_ht">
+    <cd:Integer>
+      <cd:Description>Number of reference heights</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_wvlen">
+    <cd:Integer>
+      <cd:Description>Number of reference wavelengths</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_alb">
+    <cd:Integer>
+      <cd:Description>Number of reference albedos</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_azimuth_harm">
+    <cd:Integer>
+      <cd:Description>Number of azimuth harmonics</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_coeff_sol_zen_ang">
+    <cd:Integer>
+      <cd:Description>Number of coefficients in solar zenith angle parameterization</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_coeff_los_zen_ang">
+    <cd:Integer>
+      <cd:Description>Number of coefficients in line-of-sight nadir angle parameterization</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ref_ht">
+    <cd:Array>
+      <cd:Description>Reference heights</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_ht)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>km</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ref_wvlen">
+    <cd:Array>
+      <cd:Description>Reference wavelengths</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_wvlen)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>nm</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ref_alb">
+    <cd:Array>
+      <cd:Description>Reference albedos</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_alb)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="rayleigh_ref_coeff_1st">
+    <cd:Array>
+      <cd:Description>Rayleigh reflectance coefficients, first harmonic</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_wvlen)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_ht)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_alb)]]></cd:Dimension>
+      <cd:Dimension>24</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>1/sr</cd:Unit>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="rayleigh_ref_coeff_2nd">
+    <cd:Array>
+      <cd:Description>Rayleigh reflectance coefficients, second harmonic</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_wvlen)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_ht)]]></cd:Dimension>
+      <cd:Dimension>24</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>1/sr</cd:Unit>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="rayleigh_ref_coeff_3rd">
+    <cd:Array>
+      <cd:Description>Rayleigh reflectance coefficients, third harmonic</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_wvlen)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_ht)]]></cd:Dimension>
+      <cd:Dimension>24</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>1/sr</cd:Unit>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

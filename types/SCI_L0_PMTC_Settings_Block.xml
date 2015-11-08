@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_L0_PMTC_Settings_Block" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Description>PMTC Settings</cd:Description>
+  <cd:Field name="phase">
+    <cd:Integer>
+      <cd:Description>PHASE identifies the current scanning phase (range 2--7).</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="multi_purpose_status_spare_0">
+    <cd:Raw>
+      <cd:Description>spare</cd:Description>
+      <cd:BitSize>2</cd:BitSize>
+    </cd:Raw>
+    <cd:Hidden/>
+  </cd:Field>
+  <cd:Field name="ndfm">
+    <cd:Integer>
+      <cd:Description>Neutral Density Filter Mechanism. 0 = unknown position; 1 = IN (working position), 2 = OUT (home position), 3 = error (switch defect, position unknown).</cd:Description>
+      <cd:BitSize>2</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ncwm">
+    <cd:Integer>
+      <cd:Description>Nadir Calibration Window Mechanism.  0 = unknown position; 1 = OPEN (working position), 2 = CLOSED (home position), 3 = error (switch defect, position unknown).</cd:Description>
+      <cd:BitSize>2</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="apsm">
+    <cd:Integer>
+      <cd:Description>Aperture Stop Mechanism.  0 = unknown position; 1 = SMALL (working position), 2 = LARGE (home position), 3 = error (switch defect, position unknown).</cd:Description>
+      <cd:BitSize>2</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="wls">
+    <cd:Integer>
+      <cd:Description>White Light Calibration Source setting. 0 = invalid; 1 = ON; 2 = OFF; 3 = invalid.</cd:Description>
+      <cd:BitSize>2</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sls">
+    <cd:Integer>
+      <cd:Description>Spectral Line Calibnration Source setting. 0 = invalid; 1 = ON; 2 = OFF; 3 = invalid.</cd:Description>
+      <cd:BitSize>2</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="scanner_mode">
+    <cd:Integer>
+      <cd:Description>Scanner Mode</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="az_type">
+    <cd:Integer>
+      <cd:Description>Azimuth scan-mirror: movement applied. 0 = transition to new position; 1 = scan execution according to the phase parameters.</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="az_center">
+    <cd:Integer>
+      <cd:Description>Azimuth scan-mirror: center relative scan profile flag. 0 = no centering is applied; 1 = apply centering algorithm.</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="az_filter">
+    <cd:Integer>
+      <cd:Description>Azimuth scan-mirror: apply filter algorithm in the scanner position. 0 = no filtering to be applied; 1 = apply filter algorithm to control difference.</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="az_invert">
+    <cd:Integer>
+      <cd:Description>Azimuth scan-mirror: invert flag. 0 = no inversion, all repetitions of the relative scan profile are identical; 1 = every second scan profile in a series of repetitions is inverted.</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="az_correction">
+    <cd:Integer>
+      <cd:Description>Azimuth scan-mirror: correction typr flag. 0 = no correction; 1 = optical zero correction; 2 = correct with Earth model without yaw steering; 3 = correct with Earth model including yaw steering; 4 = Sun acquisition, switch to Sun Follower readout A; 5 = Sun acquisition, switch to Sun Follower readout B; 6 = Sun pointing using Sun Follower readout A; 7 = Sun pointing using Sun Follower readout B; 8 = Sun/moon tracking using AOCS data; 9 = Improved Sun/moon tracking using AOCS data.</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="az_rel_profile">
+    <cd:Integer>
+      <cd:Description>Azimuth scan-mirror: which Relative Scan Profile is to be added to the Basic Scan Profile. 0 = no relative scan profile superposition; 1--6 = identigy relative scan profile by number.</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="az_hw_constellation">
+    <cd:Integer>
+      <cd:Description>Azimuth scan-mirror: select the algorithms to be used for effective ILOS angles determination (range 1--5).</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="az_basic_profile">
+    <cd:Integer>
+      <cd:Description>Azimuth Scan Mirror: defines the basic scan profile (range 0--14).</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="az_repetitions">
+    <cd:Integer>
+      <cd:Description>Azimuth scan-mirror: defines the number of repetitions of the Relative Scan Profile in one Scan Phase. 0 = no repetition, one execution of the selected scan profile. 1--4095 = perform the specified number of repetitions of the scan profile.</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="el_type">
+    <cd:Integer>
+      <cd:Description>Elevation scan-mirror: movement applied. 0 = transition to new position; 1 = scan execution according to the phase parameters.</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="el_center">
+    <cd:Integer>
+      <cd:Description>Elevation scan-mirror: center relative scan profile flag. 0 = no centering is applied; 1 = apply centering algorithm.</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="el_filter">
+    <cd:Integer>
+      <cd:Description>Elevation scan-mirror: apply filter algorithm in the scanner position. 0 = no filtering to be applied; 1 = apply filter algorithm to control difference.</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="el_invert">
+    <cd:Integer>
+      <cd:Description>Elevation scan-mirror: invert flag. 0 = no inversion, all repetitions of the relative scan profile are identical; 1 = every second scan profile in a series of repetitions is inverted.</cd:Description>
+      <cd:BitSize>1</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="el_correction">
+    <cd:Integer>
+      <cd:Description>Elevation scan-mirror: correction typr flag. 0 = no correction; 1 = optical zero correction; 2 = correct with Earth model without yaw steering; 3 = correct with Earth model including yaw steering; 4 = Sun acquisition, switch to Sun Follower readout A; 5 = Sun acquisition, switch to Sun Follower readout B; 6 = Sun pointing using Sun Follower readout A; 7 = Sun pointing using Sun Follower readout B; 8 = Sun/moon tracking using AOCS data; 9 = Improved Sun/moon tracking using AOCS data.</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="el_rel_profile">
+    <cd:Integer>
+      <cd:Description>Elevation scan-mirror: which Relative Scan Profile is to be added to the Basic Scan Profile. 0 = no relative scan profile superposition; 1--6 = identigy relative scan profile by number.</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="el_hw_constellation">
+    <cd:Integer>
+      <cd:Description>Elevation scan-mirror: select the algorithms to be used for effective ILOS angles determination (range 1--5).</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="el_basic_profile">
+    <cd:Integer>
+      <cd:Description>Azimuth Scan Mirror: defines the basic scan profile (range 0--14).</cd:Description>
+      <cd:BitSize>4</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="el_repetitions">
+    <cd:Integer>
+      <cd:Description>Azimuth scan-mirror: defines the number of repetitions of the Relative Scan Profile in one Scan Phase. 0 = no repetition, one execution of the selected scan profile. 1--4095 = perform the specified number of repetitions of the scan profile.</cd:Description>
+      <cd:BitSize>12</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="factors">
+    <cd:Array>
+      <cd:Description>Integer multiplication factors which are applied to the Relative Scan Profile parameters 'angular variation', 'start accelleration', and 'end accelleration', when the Relative Scan Profile is executed. Factor i is applied to Relative Scan Profile i, with i=1..6.</cd:Description>
+      <cd:Dimension>6</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>int8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

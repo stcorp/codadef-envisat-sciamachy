@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_LK1_AX_GADS_var" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="orb_phase">
+    <cd:Float>
+      <cd:Description>Orbit phase after eclipse (range: 0-1)</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="obm_det_pmd">
+    <cd:Array>
+      <cd:Description>OBM (near radiator), detector (channels 6-8) and PMD temperatures</cd:Description>
+      <cd:Dimension>10</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>K</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="leak_var">
+    <cd:Array>
+      <cd:Description>Variable fraction of the leakage current on top of the constant fraction for channels 6 to 8</cd:Description>
+      <cd:Dimension>3</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU/s</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="err_leak_var">
+    <cd:Array>
+      <cd:Description>Error of variable fraction of LC</cd:Description>
+      <cd:Dimension>3</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU/s</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="sol_stray">
+    <cd:Array>
+      <cd:Description>Solar straylight scattered from the azimuth mirror</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU/s</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="err_sol_stray">
+    <cd:Array>
+      <cd:Description>Error on the solar straylight</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU/s</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="pmd_stray">
+    <cd:Array>
+      <cd:Description>Straylight offset for PMDs</cd:Description>
+      <cd:Dimension>7</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="err_pmd_stray">
+    <cd:Array>
+      <cd:Description>Error on straylight offset for PMDs</cd:Description>
+      <cd:Dimension>7</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="pmd_off_var">
+    <cd:Array>
+      <cd:Description>Variable fraction of the PMD dark offset on top of the constant fraction for PMD 5 and 6</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="err_pmd_off_var">
+    <cd:Array>
+      <cd:Description>Error on the variable fraction of PMD offset</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

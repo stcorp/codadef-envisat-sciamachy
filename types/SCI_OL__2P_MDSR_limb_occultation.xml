@@ -1,0 +1,422 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_OL__2P_MDSR_limb_occultation" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start Time of DSR</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="dsr_length">
+    <cd:Integer>
+      <cd:Description>Length of this DSR in bytes</cd:Description>
+      <cd:Unit>bytes</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 if empty DSR)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="integr_time">
+    <cd:Integer>
+      <cd:Description>Integration time for this DSR</cd:Description>
+      <cd:Unit>1/16 s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="16.000000">
+        <cd:Unit>s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="method">
+    <cd:Text format="ascii">
+      <cd:Description>Retrieval method. 'O' = optimal estimation, 'N' = non-linear least squares fitting, etc.</cd:Description>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="ref_height">
+    <cd:Float>
+      <cd:Description>Height of the reference pressure</cd:Description>
+      <cd:Unit>km</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="ref_pressure">
+    <cd:Float>
+      <cd:Description>Reference pressure for hydrostatic equilibrium</cd:Description>
+      <cd:Unit>hPa</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="ref_pressure_source">
+    <cd:Text format="ascii">
+      <cd:Description>Reference pressure source. 'E' = ECMWF, 'C' = climatology, etc.</cd:Description>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="n_main">
+    <cd:Integer>
+      <cd:Description>Number of retrieval levels</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="n_meas">
+    <cd:Integer>
+      <cd:Description>Number of used measurement levels.</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="n1">
+    <cd:Integer>
+      <cd:Description>Number of fitted main gas species</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="n2">
+    <cd:Integer>
+      <cd:Description>Number of fitted closure parameters</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="n3">
+    <cd:Integer>
+      <cd:Description>Number fitted other parameters</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="n4">
+    <cd:Integer>
+      <cd:Description>Number of fitted scaling parameters for auxiliary gases</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="tangent_height">
+    <cd:Array>
+      <cd:Description>Tangent height at the lower layer boundary</cd:Description>
+      <cd:Dimension><![CDATA[int(../n_main)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>km</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="tangent_pressure">
+    <cd:Array>
+      <cd:Description>Tangent layer pressure at the lower layer boundary</cd:Description>
+      <cd:Dimension><![CDATA[int(../n_main)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>hPa</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="tangent_temp">
+    <cd:Array>
+      <cd:Description>Tangent layer temperature (mean)</cd:Description>
+      <cd:Dimension><![CDATA[int(../n_main)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>K</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="main_species">
+    <cd:Array>
+      <cd:Description>Main species which have been fitted on the coarse forward model grid</cd:Description>
+      <cd:Dimension><![CDATA[int(../n_main)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../n1)]]></cd:Dimension>
+      <cd:Record>
+        <cd:Field name="tang_vmr">
+          <cd:Float>
+            <cd:Description>Tangent layer volume mixing ratio</cd:Description>
+            <cd:Unit>ppv</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="err_tang_vmr">
+          <cd:Float>
+            <cd:Description>Error on the tangent volume mixing ratio</cd:Description>
+            <cd:Unit>%</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="vert_col">
+          <cd:Float>
+            <cd:Description>Vertical column density above lower layer boundary</cd:Description>
+            <cd:Unit>molecules/cm2</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="err_vert_col">
+          <cd:Float>
+            <cd:Description>Error on the vertical column density above lower layer boundary</cd:Description>
+            <cd:Unit>%</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="scaled_profiles">
+    <cd:Array>
+      <cd:Description>Scaled profiles which have been fitted on the coarse forward model grid</cd:Description>
+      <cd:Dimension><![CDATA[int(../n_main)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../n4)]]></cd:Dimension>
+      <cd:Record>
+        <cd:Field name="tang_vmr">
+          <cd:Float>
+            <cd:Description>Tangent layer volume mixing ratio</cd:Description>
+            <cd:Unit>ppv</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="err_tang_vmr">
+          <cd:Float>
+            <cd:Description>Error on the tangent volume mixing ratio</cd:Description>
+            <cd:Unit>%</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="vert_col">
+          <cd:Float>
+            <cd:Description>Vertical column density above lower layer boundary</cd:Description>
+            <cd:Unit>molecules/cm2</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="err_vert_col">
+          <cd:Float>
+            <cd:Description>Error on the vertical column density above lower layer boundary</cd:Description>
+            <cd:Unit>%</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="measurement_grid">
+    <cd:Array>
+      <cd:Description>Measurement grid</cd:Description>
+      <cd:Dimension><![CDATA[int(../n_meas)]]></cd:Dimension>
+      <cd:Record>
+        <cd:Field name="dsr_time">
+          <cd:Time timeformat="binary_envisat_datetime">
+            <cd:Description>Start Time of the measurement at that specific layer</cd:Description>
+          </cd:Time>
+        </cd:Field>
+        <cd:Field name="tangent_height">
+          <cd:Float>
+            <cd:Description>Mean tangent height of measurement</cd:Description>
+            <cd:Unit>km</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="tangent_pressure">
+          <cd:Float>
+            <cd:Description>Pressure at tangent height</cd:Description>
+            <cd:Unit>hPa</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="tangent_temp">
+          <cd:Float>
+            <cd:Description>Temperature at tangent height</cd:Description>
+            <cd:Unit>K</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="num_windows">
+          <cd:Integer>
+            <cd:Description>Number of fitting windows</cd:Description>
+            <cd:BitSize>8</cd:BitSize>
+            <cd:NativeType>uint8</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="win_min">
+          <cd:Float>
+            <cd:Description>Minimum wavelength over all fitting windows</cd:Description>
+            <cd:Unit>nm</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="win_max">
+          <cd:Float>
+            <cd:Description>Maximum wavelength over all fitting windows</cd:Description>
+            <cd:Unit>nm</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="n_state_vec">
+    <cd:Integer>
+      <cd:Description>State vector size. (n_state_vec = n1 * n_main + n2 * n_meas + n3)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="state_vector">
+    <cd:Array>
+      <cd:Description>State vector</cd:Description>
+      <cd:Dimension><![CDATA[int(../n_state_vec)]]></cd:Dimension>
+      <cd:Record>
+        <cd:Field name="value">
+          <cd:Float>
+            <cd:Description>Value of the state vector entry</cd:Description>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="error">
+          <cd:Float>
+            <cd:Description>Error of the value of the state vector entry</cd:Description>
+            <cd:Unit>%</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="type">
+          <cd:Array>
+            <cd:Description>Type of the value of the state vector entry (annotation)</cd:Description>
+            <cd:Dimension>4</cd:Dimension>
+            <cd:Integer>
+              <cd:BitSize>8</cd:BitSize>
+              <cd:NativeType>uint8</cd:NativeType>
+            </cd:Integer>
+          </cd:Array>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="m_f">
+    <cd:Integer>
+      <cd:Description>Correlation matrix size</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="correlation_matrix">
+    <cd:Array>
+      <cd:Description>Correlation Matrix of the fit</cd:Description>
+      <cd:Dimension><![CDATA[int(../m_f)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="rms_fit">
+    <cd:Float>
+      <cd:Description>RMS of the fit</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="chi_2_fit">
+    <cd:Float>
+      <cd:Description>Chi^2 of the fit</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="goodness_fit">
+    <cd:Float>
+      <cd:Description>Goodness of the fit</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="n_i">
+    <cd:Integer>
+      <cd:Description>Number of iterations of the fit</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="n_used_wl">
+    <cd:Integer>
+      <cd:Description>Number of used wavelengths</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="n_rejected_wl">
+    <cd:Integer>
+      <cd:Description>Number of rejected wavelengths</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="criteria_flag">
+    <cd:Integer>
+      <cd:Description>Convergency criteria</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="n_res">
+    <cd:Integer>
+      <cd:Description>Residuals size (n_res = n_st_vec * n_i)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="residuals">
+    <cd:Array>
+      <cd:Description>Iteration step state vector residuals</cd:Description>
+      <cd:Dimension><![CDATA[int(../n_i)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../n_state_vec)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="n_ad">
+    <cd:Integer>
+      <cd:Description>Number of additional diagnostics</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="add_diag">
+    <cd:Array>
+      <cd:Description>Additional diagnostics</cd:Description>
+      <cd:Dimension><![CDATA[int(../n_ad)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

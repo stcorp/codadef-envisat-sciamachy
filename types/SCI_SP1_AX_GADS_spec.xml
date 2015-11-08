@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_SP1_AX_GADS_spec" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="orb_phase">
+    <cd:Float>
+      <cd:Description>Orbit phase after eclipse (range: the absolute value is between 0 and 1)</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="coeff">
+    <cd:Array>
+      <cd:Description>Coefficients in the fourth-order polynomial for each detector array (channel)</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>5</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>64</cd:BitSize>
+        <cd:NativeType>double</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_lines">
+    <cd:Array>
+      <cd:Description>Number of used lines per channel</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="cal_err">
+    <cd:Array>
+      <cd:Description>Wavelength calibration error per channel</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

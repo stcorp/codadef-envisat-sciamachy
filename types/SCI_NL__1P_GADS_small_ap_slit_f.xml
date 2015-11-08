@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_GADS_small_ap_slit_f" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="pix_pos_slit_fun">
+    <cd:Integer>
+      <cd:Description>Pixel position for which the slit function is given (0-8191)</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="type_slit_fun">
+    <cd:Integer>
+      <cd:Description>Type of slit function (1 = gauss, 2 = single hyperbolic, 3 = voigt)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="fwhm_slit_fun">
+    <cd:Float>
+      <cd:Description>FWHM of slit function, for voigt: Lorenzian part</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="f_voi_fwhm_gauss">
+    <cd:Float>
+      <cd:Description>For voigt only: FWHM of Gaussian part</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+</cd:Record>

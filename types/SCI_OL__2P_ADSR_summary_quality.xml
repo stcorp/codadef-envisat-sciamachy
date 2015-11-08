@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_OL__2P_ADSR_summary_quality" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start time of the scan phase of the state</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="attach_flag">
+    <cd:Integer>
+      <cd:Description>Attachment Flag. 1 = no MDSRs attached to the current ADSR; 0 = otherwise.</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="err_cloud_para">
+    <cd:Array>
+      <cd:Description>Error on cloud parameters</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="aero_para_diagnostic">
+    <cd:Array>
+      <cd:Description>Aerosol parameter diagnostic</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="qual_param_fit_window">
+    <cd:Array>
+      <cd:Description>Quality of the driving geophysical parameter in each fitting window</cd:Description>
+      <cd:Dimension>44</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="rms_retr_alg">
+    <cd:Array>
+      <cd:Description>RMS of the retrieval algorithm</cd:Description>
+      <cd:Dimension>44</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="chi_sq_retr_alg">
+    <cd:Array>
+      <cd:Description>Chi^2 of the retrieval algorithm</cd:Description>
+      <cd:Dimension>44</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="goodn_fit_retr_alg">
+    <cd:Array>
+      <cd:Description>Goodness-of-fit of the retrieval algorithm</cd:Description>
+      <cd:Dimension>44</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_OL__2P_MDSR_limb_clouds" last-modified="2011-02-21" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start Time of DSR</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="dsr_length">
+    <cd:Integer>
+      <cd:Description>Length of this DSR in bytes</cd:Description>
+      <cd:Unit>bytes</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 if empty DSR)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="integr_time">
+    <cd:Integer>
+      <cd:Description>Integration time for this DSR</cd:Description>
+      <cd:Unit>1/16 s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="16.000000">
+        <cd:Unit>s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="diag">
+    <cd:Integer>
+      <cd:Description>Diagnostics of the cloud detection algorithm. 0: retrieval of normal water clouds succeded; 1: retrievel of ice clouds succeded; 2: retrievel of polar stratospheric clouds succeded; 3: retrievel of noctilucent clouds succeded; 4-7: not used</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="wcl_flag">
+    <cd:Integer>
+      <cd:Description>Flag for normal water clouds. 0: no clouds; 1: partially cloudy; 2: fully cloudy; 3: bad data or cloud top height too high</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="max_wcl">
+    <cd:Float>
+      <cd:Description>Maximum value of CIR for normal water clouds</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="max_wcl_height">
+    <cd:Float>
+      <cd:Description>Height of maximum value of CIR for normal water clouds</cd:Description>
+      <cd:Unit>km</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="max_wcl_height_idx">
+    <cd:Integer>
+      <cd:Description>Height index of maximum value of CIR for normal water clouds</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="icl_flag">
+    <cd:Integer>
+      <cd:Description>Flag for ice water clouds. 0: water cloud; 1: ice cloud; 2: bad data (maxheigh_icl is greater than the warning tangent height, warn_th); 9: strange case (maxval_icl is greater than the upper bound for the CIR, upper_bound_cir)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="max_icl">
+    <cd:Float>
+      <cd:Description>Maximum value of CIR for ice water clouds</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="max_icl_height">
+    <cd:Float>
+      <cd:Description>Height of maximum value of CIR for ice water clouds</cd:Description>
+      <cd:Unit>km</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="max_icl_height_idx">
+    <cd:Integer>
+      <cd:Description>Height index of maximum value of CIR for ice water clouds</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="psc_flag">
+    <cd:Integer>
+      <cd:Description>Flag for polar stratospheric clouds. 0: no PSC; 1: PSC</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="max_psc">
+    <cd:Float>
+      <cd:Description>Maximum value of CIR for polar stratospheric clouds</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="max_psc_height">
+    <cd:Float>
+      <cd:Description>Height of maximum value of CIR for polar stratospheric clouds</cd:Description>
+      <cd:Unit>km</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="max_psc_height_idx">
+    <cd:Integer>
+      <cd:Description>Height index of maximum value of CIR for polar stratospheric clouds</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="nlc_flag">
+    <cd:Integer>
+      <cd:Description>Flag for noctilucent clouds. 0: no NLC; 1: NLC</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="max_nlc">
+    <cd:Float>
+      <cd:Description>Not used at present</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="max_nlc_height">
+    <cd:Float>
+      <cd:Description>Maximum height of strictly monotonically increasing radiances for noctilucent clouds</cd:Description>
+      <cd:Unit>km</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="max_nlc_height_idx">
+    <cd:Integer>
+      <cd:Description>Maximum height index of strictly monotonically increasing radiances for noctilucent clouds</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="m1">
+    <cd:Integer>
+      <cd:Description>Number of tangent heights for CIR</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="tangent_height">
+    <cd:Array>
+      <cd:Description>Tangent heights for CIR</cd:Description>
+      <cd:Dimension><![CDATA[int(../m1)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>km</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="m2">
+    <cd:Integer>
+      <cd:Description>Number of CIR</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cir">
+    <cd:Array>
+      <cd:Description>CIR</cd:Description>
+      <cd:Dimension><![CDATA[int(../m1)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../m2)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="n">
+    <cd:Integer>
+      <cd:Description>Number of additional limb cloud parameters</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cloud_params">
+    <cd:Array>
+      <cd:Description>Additional limb cloud parameters</cd:Description>
+      <cd:Dimension><![CDATA[int(../n)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

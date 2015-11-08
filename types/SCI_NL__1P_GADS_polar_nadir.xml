@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_GADS_polar_nadir" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="elev_mirr_pos">
+    <cd:Float>
+      <cd:Description>Elevation mirror position</cd:Description>
+      <cd:Unit>degrees</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="mu2_nad">
+    <cd:Array>
+      <cd:Description>mu2[nadir] for the elevation mirror position of field 1</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="mu3_nad">
+    <cd:Array>
+      <cd:Description>mu3[nadir] nadir for the elevation mirror position of field 1</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

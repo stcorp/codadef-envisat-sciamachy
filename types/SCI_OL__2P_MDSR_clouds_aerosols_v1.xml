@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_OL__2P_MDSR_clouds_aerosols_v1" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start Time of DSR</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="dsr_length">
+    <cd:Integer>
+      <cd:Description>Length of this DSR in bytes</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="quality_flag">
+    <cd:Integer>
+      <cd:Description>Quality Indicator (-1 if empty DSR)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>int8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="integr_time">
+    <cd:Integer>
+      <cd:Description>Integration time for this DSR</cd:Description>
+      <cd:Unit>1/16 s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="16.000000">
+        <cd:Unit>s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="surface_pres">
+    <cd:Float>
+      <cd:Description>Surface pressure</cd:Description>
+      <cd:Unit>hPa</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="cl_frac">
+    <cd:Float>
+      <cd:Description>Cloud fraction</cd:Description>
+      <cd:Unit/>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="cl_frac_err">
+    <cd:Float>
+      <cd:Description>Error on cloud fraction</cd:Description>
+      <cd:Unit/>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="pmd_read">
+    <cd:Integer>
+      <cd:Description>Number of PMD sub-pixels for this DSR</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pmd_read_cl">
+    <cd:Array>
+      <cd:Description>Number of PMD sub-pixels determined to be totally clouded or cloud-free</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="cl_top_height">
+    <cd:Float>
+      <cd:Description>Cloud-top height</cd:Description>
+      <cd:Unit>km</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="cl_top_height_err">
+    <cd:Float>
+      <cd:Description>Error on cloud-top height</cd:Description>
+      <cd:Unit/>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="cl_opt_depth">
+    <cd:Float>
+      <cd:Description>Cloud optical depth</cd:Description>
+      <cd:Unit>km</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="cl_opt_depth_err">
+    <cd:Float>
+      <cd:Description>Error on cloud optical depth</cd:Description>
+      <cd:Unit/>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="cl_type_flags">
+    <cd:Integer>
+      <cd:Description>Cloud type. Bit definition = 0: low or high cloud; 1: ice or water cloud; 2: thick or thin cloud; 3-15: not used</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="cl_reflectance">
+    <cd:Float>
+      <cd:Description>Cloud-top bi-directional reflectance</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="cl_reflectance_err">
+    <cd:Float>
+      <cd:Description>Error on cloud-top bi-directional reflectance</cd:Description>
+      <cd:Unit/>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="surf_reflectance">
+    <cd:Float>
+      <cd:Description>Effective Lambertian surface reflectance</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="surf_reflectance_err">
+    <cd:Float>
+      <cd:Description>Error on effective Lambertian surface reflectance</cd:Description>
+      <cd:Unit/>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="cloud_flags">
+    <cd:Integer>
+      <cd:Description>Flags describing the cloud parameter output. Bit definition = 0: source of cloud fraction PMD (1) - fitting (0); 1: source of cloud-top pressure fitting (1) - ISCCP (0); 2: SACURA: full convergent yes/no; 3: number of iterations exceeded, average of neighboured pixels taken yes/no; 4: SACURA: cloud layer size set to contraint yes/no; 5: cloud bottom height set to contraint yes/no; 6: cloud top height set to constraint yes/no; 7-15: not used at present</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="aero_abso_ind">
+    <cd:Float>
+      <cd:Description>Aerosol absorbing index</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="aero_ind_diag">
+    <cd:Float>
+      <cd:Description>Aerosol indicator diagnostic</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="aero_flags">
+    <cd:Integer>
+      <cd:Description>Flag describing the aerosol indicator output. Bit definition = 0: no - yes Rayleigh scattering correction successful; 1: no - yes AAIA computation successfully ended; 2-15: not used at present</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_aero_param">
+    <cd:Integer>
+      <cd:Description>Number of additional aerosol parameters</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="aero_param">
+    <cd:Array>
+      <cd:Description>Additional aerosol parameters</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_aero_param)]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

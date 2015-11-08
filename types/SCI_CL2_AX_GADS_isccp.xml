@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_CL2_AX_GADS_isccp" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="num_ref_lat">
+    <cd:Integer>
+      <cd:Description>Number of reference latitudes</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_long">
+    <cd:Integer>
+      <cd:Description>Number of reference longitudes</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_mos_entry_db">
+    <cd:Integer>
+      <cd:Description>Number of months entries in the data base</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ref_lat">
+    <cd:Array>
+      <cd:Description>Reference latitudes</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_lat)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>degrees_north</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ref_long">
+    <cd:Array>
+      <cd:Description>Reference longitudes</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_long)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>degrees_east</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="cl_top_pres">
+    <cd:Array>
+      <cd:Description>Cloud-top pressures</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_long)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_lat)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_mos_entry_db)]]></cd:Dimension>
+      <cd:Float>
+        <cd:Unit>hPa</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

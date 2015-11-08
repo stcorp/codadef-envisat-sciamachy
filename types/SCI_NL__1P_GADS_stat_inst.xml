@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_GADS_stat_inst" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="n_lc_min">
+    <cd:Integer>
+      <cd:Description>n_lc_min</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ds_n_phases">
+    <cd:Integer>
+      <cd:Description>ds_n_phases</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ds_phase_boundaries">
+    <cd:Array>
+      <cd:Description>ds_phase_boundaries</cd:Description>
+      <cd:Dimension><![CDATA[int(../ds_n_phases) + 1]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="lc_stray_index">
+    <cd:Array>
+      <cd:Description>lc_stray_index</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="lc_harm_order">
+    <cd:Integer>
+      <cd:Description>lc_harm_order</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ds_poly_order">
+    <cd:Integer>
+      <cd:Description>ds_poly_order</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="do_var_lc_cha">
+    <cd:Array format="ascii">
+      <cd:Description>do_var_lc_cha (3 times 4 characters per EPI-TAXX channel)</cd:Description>
+      <cd:Dimension>3</cd:Dimension>
+      <cd:Text>
+        <cd:ByteSize>4</cd:ByteSize>
+        <cd:NativeType>string</cd:NativeType>
+      </cd:Text>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="do_stray_lc_cha">
+    <cd:Array format="ascii">
+      <cd:Description>do_stray_lc_cha (8 times 4 characters per channel)</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Text>
+        <cd:ByteSize>4</cd:ByteSize>
+        <cd:NativeType>string</cd:NativeType>
+      </cd:Text>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="do_var_lc_pmd">
+    <cd:Array format="ascii">
+      <cd:Description>do_var_lc_pmd (2 times 4 characters per IR PMDs)</cd:Description>
+      <cd:Dimension>2</cd:Dimension>
+      <cd:Text>
+        <cd:ByteSize>4</cd:ByteSize>
+        <cd:NativeType>string</cd:NativeType>
+      </cd:Text>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="do_stray_lc_pmd">
+    <cd:Array format="ascii">
+      <cd:Description>do_stray_lc_pmd (7 times 4 characters per PMD)</cd:Description>
+      <cd:Dimension>7</cd:Dimension>
+      <cd:Text>
+        <cd:ByteSize>4</cd:ByteSize>
+        <cd:NativeType>string</cd:NativeType>
+      </cd:Text>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="electrons_bu">
+    <cd:Array>
+      <cd:Description>electrons_bu (per channel)</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>1/BU</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="ppg_error">
+    <cd:Float>
+      <cd:Description>ppg_error</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="stray_error">
+    <cd:Float>
+      <cd:Description>stray_error</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="sp_n_phases">
+    <cd:Integer>
+      <cd:Description>sp_n_phases</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="sp_phase_boundaries">
+    <cd:Array>
+      <cd:Description>sp_phase_boundaries</cd:Description>
+      <cd:Dimension><![CDATA[int(../sp_n_phases) + 1]]></cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="startpix_6_plus">
+    <cd:Integer>
+      <cd:Description>startpix_6+</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="startpix_8_plus">
+    <cd:Integer>
+      <cd:Description>startpix_8+</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="h_toa">
+    <cd:Float>
+      <cd:Description>h_toa</cd:Description>
+      <cd:Unit>m</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="lambda_end_gdf">
+    <cd:Float>
+      <cd:Description>lambda_end_gdf</cd:Description>
+      <cd:Unit>nm</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="do_pol_point">
+    <cd:Text format="ascii">
+      <cd:Description>do_pol_point ('t' for true and 'f' for false)</cd:Description>
+      <cd:ByteSize>12</cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="sat_level">
+    <cd:Array>
+      <cd:Description>sat_level</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Integer>
+        <cd:Unit>BU</cd:Unit>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="pmd_saturation_limit">
+    <cd:Integer>
+      <cd:Description>pmd_saturation_limit</cd:Description>
+      <cd:Unit>BU</cd:Unit>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="do_use_limb_dark">
+    <cd:Text format="ascii">
+      <cd:Description>do_use_limb_dark ('t' for true and 'f' for false)</cd:Description>
+      <cd:ByteSize>1</cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="do_pixelwise">
+    <cd:Text format="ascii">
+      <cd:Description>do_pixelwise 't' for true and 'f' for false)</cd:Description>
+      <cd:ByteSize>8</cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="alpha0_asm">
+    <cd:Float>
+      <cd:Description>alpha0_asm</cd:Description>
+      <cd:Unit>degrees</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="alpha0_esm">
+    <cd:Float>
+      <cd:Description>alpha0_esm</cd:Description>
+      <cd:Unit>degrees</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="do_fraunhofer">
+    <cd:Array format="ascii">
+      <cd:Description>do_fraunhofer (8 times 5 characters per channel)</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Text>
+        <cd:ByteSize>5</cd:ByteSize>
+        <cd:NativeType>string</cd:NativeType>
+      </cd:Text>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="do_etalon">
+    <cd:Array format="ascii">
+      <cd:Description>do_etalon (8 times 3 characters per channel)</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Text>
+        <cd:ByteSize>3</cd:ByteSize>
+        <cd:NativeType>string</cd:NativeType>
+      </cd:Text>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="do_ib_sd_etn">
+    <cd:Text format="ascii">
+      <cd:Description>do_ib_sd_etn ('t' for true and 'f' for false)</cd:Description>
+      <cd:ByteSize>7</cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="do_ib_oc_etn">
+    <cd:Text format="ascii">
+      <cd:Description>do_ib_sd_etn ('t' for true and 'f' for false)</cd:Description>
+      <cd:ByteSize>7</cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+  </cd:Field>
+  <cd:Field name="level_2_smr">
+    <cd:Array>
+      <cd:Description>Level 2 SMR</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>8</cd:BitSize>
+        <cd:NativeType>uint8</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

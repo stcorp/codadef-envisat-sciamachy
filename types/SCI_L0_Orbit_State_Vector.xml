@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_L0_Orbit_State_Vector" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Description>Orbit State Vector</cd:Description>
+  <cd:Field name="time">
+    <cd:Integer>
+      <cd:Description>Time of validity of orbit state vector</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="a">
+    <cd:Integer>
+      <cd:Description>Parameter a</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ex">
+    <cd:Integer>
+      <cd:Description>Parameter e[x]</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="ey">
+    <cd:Integer>
+      <cd:Description>Parameter e[y]</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="omega">
+    <cd:Integer>
+      <cd:Description>Parameter Omega</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="i">
+    <cd:Integer>
+      <cd:Description>Parameter i</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="alpha">
+    <cd:Integer>
+      <cd:Description>Parameter alpha = omega + M</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="omega_v">
+    <cd:Integer>
+      <cd:Description>Parameter omega + V</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

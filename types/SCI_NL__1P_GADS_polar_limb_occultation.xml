@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_GADS_polar_limb_occultation" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="elev_mirr_pos">
+    <cd:Float>
+      <cd:Description>Elevation mirror position</cd:Description>
+      <cd:Unit>degrees</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="azi_mirr_pos">
+    <cd:Float>
+      <cd:Description>Azimuth mirror position</cd:Description>
+      <cd:Unit>degrees</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="mu2_limb">
+    <cd:Array>
+      <cd:Description>mu2[limb] for the elevation and azimuth mirror position of field 1 and 2</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="mu3_limb">
+    <cd:Array>
+      <cd:Description>mu3[limb] limb for the elevation and azimuth mirror position of field 1 and 2</cd:Description>
+      <cd:Dimension>8</cd:Dimension>
+      <cd:Dimension>1024</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

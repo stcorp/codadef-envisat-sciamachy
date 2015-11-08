@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="SCI_MF1_AX" format="binary" last-modified="2014-09-16" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="binary">
+    <cd:Field name="mph">
+      <cd:NamedType id="MPH"/>
+    </cd:Field>
+    <cd:Field name="sph">
+      <cd:NamedType id="Auxiliary_Data_SPH"/>
+    </cd:Field>
+    <cd:Field name="dsd">
+      <cd:Array format="ascii">
+        <cd:Dimension><![CDATA[$num_dsd]]></cd:Dimension>
+        <cd:NamedType id="DSD"/>
+      </cd:Array>
+    </cd:Field>
+    <cd:Field name="m_factor_mm">
+      <cd:Array>
+        <cd:Description>M factor file</cd:Description>
+        <cd:Dimension>1</cd:Dimension>
+        <cd:Record>
+          <cd:Field name="n_refr_index">
+            <cd:Integer>
+              <cd:Description>number of (complex) refractiv indexes</cd:Description>
+              <cd:ByteSize>4</cd:ByteSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="n_layer">
+            <cd:Integer>
+              <cd:Description>number of contamination layers</cd:Description>
+              <cd:ByteSize>4</cd:ByteSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="n_surfaces">
+            <cd:Integer>
+              <cd:Description>number of surfaces with contamination</cd:Description>
+              <cd:ByteSize>4</cd:ByteSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="n_retard">
+            <cd:Integer>
+              <cd:Description>number of retarder parameters</cd:Description>
+              <cd:ByteSize>4</cd:ByteSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="n_M1_det">
+            <cd:Integer>
+              <cd:Description>number of OBM M1 mfactor for sci. det.</cd:Description>
+              <cd:ByteSize>4</cd:ByteSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="n_M1_pmd">
+            <cd:Integer>
+              <cd:Description>number of OBM M1 mfactor for PMD</cd:Description>
+              <cd:ByteSize>4</cd:ByteSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="n_add_param">
+            <cd:Integer>
+              <cd:Description>number of add parameters</cd:Description>
+              <cd:ByteSize>4</cd:ByteSize>
+              <cd:NativeType>int32</cd:NativeType>
+            </cd:Integer>
+          </cd:Field>
+          <cd:Field name="wavel">
+            <cd:Array>
+              <cd:Description>wavelength grid of the science channel det.</cd:Description>
+              <cd:Dimension>8192</cd:Dimension>
+              <cd:Float>
+                <cd:ByteSize>4</cd:ByteSize>
+                <cd:NativeType>float</cd:NativeType>
+              </cd:Float>
+            </cd:Array>
+          </cd:Field>
+          <cd:Field name="refr_index">
+            <cd:Array>
+              <cd:Description>Sequence: 8192 * real (MIR_LAYER2), 8192 * IMG (MIR_LAYER2), 8192 * real (MIR_LAYER1), 8192 * IMG (MIR_LAYER1), 8192 * real (MIR_ALU), 8192 * IMG (MIR_ALU)</cd:Description>
+              <cd:Dimension>2</cd:Dimension>
+              <cd:Dimension>int(../n_refr_index)</cd:Dimension>
+              <cd:Dimension>8192</cd:Dimension>
+              <cd:Float>
+                <cd:ByteSize>4</cd:ByteSize>
+                <cd:NativeType>float</cd:NativeType>
+              </cd:Float>
+            </cd:Array>
+          </cd:Field>
+          <cd:Field name="d_contam">
+            <cd:Array>
+              <cd:Description>Sequence (d2 only with n_layer=2): d1[6] : SC_ESM_MIR, SC_ASM_MIR, SC_ESM_DIF, SC_ASM_DIF, SC_EXTRA_MIR, SC_WLS_MIR; d2[6] : SC_ESM_MIR, SC_ASM_MIR, SC_ESM_DIF, SC_ASM_DIF, SC_EXTRA_MIR, SC_WLS_MIR. With n_layer=2, d1 is the AlO layer on the mirror/diffuser (always 4.1)</cd:Description>
+              <cd:Dimension>int(../n_layer)</cd:Dimension>
+              <cd:Dimension>int(../n_surfaces)</cd:Dimension>
+              <cd:Float>
+                <cd:ByteSize>4</cd:ByteSize>
+                <cd:NativeType>float</cd:NativeType>
+              </cd:Float>
+            </cd:Array>
+          </cd:Field>
+          <cd:Field name="par_retard">
+            <cd:Array>
+              <cd:Description>retarder parameter</cd:Description>
+              <cd:Dimension>int(../n_retard)</cd:Dimension>
+              <cd:Float>
+                <cd:ByteSize>4</cd:ByteSize>
+                <cd:NativeType>float</cd:NativeType>
+              </cd:Float>
+            </cd:Array>
+          </cd:Field>
+          <cd:Field name="M1_sci">
+            <cd:Array>
+              <cd:Description>M1 science channel</cd:Description>
+              <cd:Dimension>int(../n_M1_det)</cd:Dimension>
+              <cd:Dimension>8192</cd:Dimension>
+              <cd:Float>
+                <cd:ByteSize>4</cd:ByteSize>
+                <cd:NativeType>float</cd:NativeType>
+              </cd:Float>
+            </cd:Array>
+          </cd:Field>
+          <cd:Field name="M1_pmd">
+            <cd:Array>
+              <cd:Description>M1 pmd channel</cd:Description>
+              <cd:Dimension>int(../n_M1_pmd)</cd:Dimension>
+              <cd:Dimension>7</cd:Dimension>
+              <cd:Float>
+                <cd:ByteSize>4</cd:ByteSize>
+                <cd:NativeType>float</cd:NativeType>
+              </cd:Float>
+            </cd:Array>
+          </cd:Field>
+          <cd:Field name="add_param">
+            <cd:Array>
+              <cd:Description>additional parameters</cd:Description>
+              <cd:Dimension>int(../n_add_param)</cd:Dimension>
+              <cd:Float>
+                <cd:ByteSize>4</cd:ByteSize>
+                <cd:NativeType>float</cd:NativeType>
+              </cd:Float>
+            </cd:Array>
+          </cd:Field>
+        </cd:Record>
+      </cd:Array>
+      <cd:Available><![CDATA[$ds_available[0] != 0]]></cd:Available>
+      <cd:BitOffset><![CDATA[$ds_offset[0]]]></cd:BitOffset>
+    </cd:Field>
+  </cd:Record>
+  <cd:ProductVariable name="num_dsd">
+    <cd:Init><![CDATA[$num_dsd = int(/mph/num_dsd)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="num_ds">
+    <cd:Init><![CDATA[$num_ds = 1]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_to_dsd_index">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[$ds_to_dsd_index[0] = index(/dsd, str(./ds_name) == "M_FACTOR_SCANNER_MODEL      ")]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_available">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $ds_available[i] = if($ds_to_dsd_index[i] != -1 && !(bytes(/dsd[$ds_to_dsd_index[i]]/filename, 8) == "NOT USED"), 1, 0)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_offset">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $ds_offset[i] = 8 * int(/dsd[$ds_to_dsd_index[i]]/ds_offset)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_size">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $ds_size[i] = 8 * int(/dsd[$ds_to_dsd_index[i]]/ds_size)]]></cd:Init>
+  </cd:ProductVariable>
+</cd:ProductDefinition>

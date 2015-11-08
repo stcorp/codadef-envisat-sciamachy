@@ -1,0 +1,394 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="SCI_KD1_AX" format="ascii" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Record format="ascii">
+  <cd:Field name="mph">
+    <cd:NamedType id="MPH"/>
+  </cd:Field>
+  <cd:Field name="sph">
+    <cd:NamedType id="Auxiliary_Data_SPH"/>
+  </cd:Field>
+  <cd:Field name="dsd">
+    <cd:Array>
+      <cd:Dimension><![CDATA[$num_dsd]]></cd:Dimension>
+      <cd:NamedType id="DSD"/>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="brdf_s">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[0] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[0] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[0]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="brdf_p">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[1] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[1] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[1]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="elev_s">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[2] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[2] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[2]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="elev_p">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[3] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[3] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[3]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="eta_nad">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[4] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[4] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[4]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="xi_nad">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[5] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[5] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[5]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="obm_s_p">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[6] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[6] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[6]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="eta_limb">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[7] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[7] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[7]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="zeta_limb">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[8] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[8] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[8]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="el_az_p">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[9] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[9] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[9]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="el_az_s">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[10] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[10] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[10]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="omega_limb">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[11] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[11] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[11]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="kappa_limb">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[12] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[12] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[12]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="xi_limb">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[13] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[13] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[13]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="sigma_limb">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[14] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[14] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[14]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="psi_limb">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[15] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[15] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[15]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="tau_limb">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[16] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[16] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[16]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="sigma_nad">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[17] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[17] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[17]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="psi_nad">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[18] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[18] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[18]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="tau_nad">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[19] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[19] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[19]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="omega_nad">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[20] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[20] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[20]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="kappa_nad">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[21] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[21] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[21]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="zeta_nad">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[22] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[22] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[22]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="stray_uniform">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[23] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[23] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[23]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="stray_ghost">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[24] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[24] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[24]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="stray_ch1">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[25] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[25] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[25]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="spec_line">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[26] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[26] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[26]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="slit_f">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[27] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[27] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[27]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="small_ap_slit_f">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[28] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[28] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[28]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="abs_rad">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[29] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[29] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[29]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="abs_irr">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[30] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[30] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[30]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="ndf">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[31] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[31] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[31]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="ndf_s_p">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[32] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[32] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[32]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="mem_effect_coef">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[33] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[33] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[33]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="pmd_cross_coef">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[34] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[34] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[34]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="bad_pixel_mask">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[35] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[35] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[35]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="ref_wls">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[36] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[36] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[36]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="fraunh_line">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[37] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[37] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[37]]]></cd:BitOffset>
+  </cd:Field>
+  <cd:Field name="non_lin">
+    <cd:Text>
+      <cd:Description>Key-Data (verbatim copy of ASCII file)</cd:Description>
+      <cd:ByteSize><![CDATA[$ds_size[38] / 8]]></cd:ByteSize>
+      <cd:NativeType>string</cd:NativeType>
+    </cd:Text>
+    <cd:Available><![CDATA[$ds_available[38] != 0]]></cd:Available>
+    <cd:BitOffset><![CDATA[$ds_offset[38]]]></cd:BitOffset>
+  </cd:Field>
+</cd:Record>
+  <cd:ProductVariable name="num_dsd">
+    <cd:Init><![CDATA[$num_dsd = int(/mph/num_dsd)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="num_ds">
+    <cd:Init><![CDATA[$num_ds = 39]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_to_dsd_index">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[$ds_to_dsd_index[0] = index(/dsd, str(./ds_name) == "_BRDF_s                     "); $ds_to_dsd_index[1] = index(/dsd, str(./ds_name) == "_BRDF_p                     "); $ds_to_dsd_index[2] = index(/dsd, str(./ds_name) == "_ELEV_s                     "); $ds_to_dsd_index[3] = index(/dsd, str(./ds_name) == "_ELEV_p                     "); $ds_to_dsd_index[4] = index(/dsd, str(./ds_name) == "_ETA_NAD                    "); $ds_to_dsd_index[5] = index(/dsd, str(./ds_name) == "_XI_NAD                     "); $ds_to_dsd_index[6] = index(/dsd, str(./ds_name) == "_OBM_s_p                    "); $ds_to_dsd_index[7] = index(/dsd, str(./ds_name) == "_ETA_LIMB                   "); $ds_to_dsd_index[8] = index(/dsd, str(./ds_name) == "_ZETA_LIMB                  "); $ds_to_dsd_index[9] = index(/dsd, str(./ds_name) == "_EL_AZ_p                    "); $ds_to_dsd_index[10] = index(/dsd, str(./ds_name) == "_EL_AZ_s                    "); $ds_to_dsd_index[11] = index(/dsd, str(./ds_name) == "_OMEGA_LIMB                 "); $ds_to_dsd_index[12] = index(/dsd, str(./ds_name) == "_KAPPA_LIMB                 "); $ds_to_dsd_index[13] = index(/dsd, str(./ds_name) == "_XI_LIMB                    "); $ds_to_dsd_index[14] = index(/dsd, str(./ds_name) == "_SIGMA_LIMB                 "); $ds_to_dsd_index[15] = index(/dsd, str(./ds_name) == "_PSI_LIMB                   "); $ds_to_dsd_index[16] = index(/dsd, str(./ds_name) == "_TAU_LIMB                   "); $ds_to_dsd_index[17] = index(/dsd, str(./ds_name) == "_SIGMA_NAD                  "); $ds_to_dsd_index[18] = index(/dsd, str(./ds_name) == "_PSI_NAD                    "); $ds_to_dsd_index[19] = index(/dsd, str(./ds_name) == "_TAU_NAD                    "); $ds_to_dsd_index[20] = index(/dsd, str(./ds_name) == "_OMEGA_NAD                  "); $ds_to_dsd_index[21] = index(/dsd, str(./ds_name) == "_KAPPA_NAD                  "); $ds_to_dsd_index[22] = index(/dsd, str(./ds_name) == "_ZETA_NAD                   "); $ds_to_dsd_index[23] = index(/dsd, str(./ds_name) == "_STRAY_UNIFORM              "); $ds_to_dsd_index[24] = index(/dsd, str(./ds_name) == "_STRAY_GHOST                "); $ds_to_dsd_index[25] = index(/dsd, str(./ds_name) == "_STRAY_CH1                  "); $ds_to_dsd_index[26] = index(/dsd, str(./ds_name) == "_SPEC_LINE                  "); $ds_to_dsd_index[27] = index(/dsd, str(./ds_name) == "_SLIT_F                     "); $ds_to_dsd_index[28] = index(/dsd, str(./ds_name) == "_SMALL_AP_SLIT_F            "); $ds_to_dsd_index[29] = index(/dsd, str(./ds_name) == "_ABS_RAD                    "); $ds_to_dsd_index[30] = index(/dsd, str(./ds_name) == "_ABS_IRR                    "); $ds_to_dsd_index[31] = index(/dsd, str(./ds_name) == "_NDF                        "); $ds_to_dsd_index[32] = index(/dsd, str(./ds_name) == "_NDF_s_p                    "); $ds_to_dsd_index[33] = index(/dsd, str(./ds_name) == "_MEM_EFFECT_COEF            "); $ds_to_dsd_index[34] = index(/dsd, str(./ds_name) == "_PMD_CROSS_COEF             "); $ds_to_dsd_index[35] = index(/dsd, str(./ds_name) == "_BAD_PIXEL_MASK             "); $ds_to_dsd_index[36] = index(/dsd, str(./ds_name) == "_REF_WLS                    "); $ds_to_dsd_index[37] = index(/dsd, str(./ds_name) == "_FRAUNH_LINE                "); $ds_to_dsd_index[38] = index(/dsd, str(./ds_name) == "_NON_LIN                    ")]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_available">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $ds_available[i] = if($ds_to_dsd_index[i] != -1 && !(bytes(/dsd[$ds_to_dsd_index[i]]/filename, 8) == "NOT USED"), 1, 0)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_offset">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $ds_offset[i] = if($ds_available[i] != 0, 8 * int(/dsd[$ds_to_dsd_index[i]]/ds_offset), -1)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="ds_size">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $ds_size[i] = if($ds_available[i] != 0, 8 * int(/dsd[$ds_to_dsd_index[i]]/ds_size), -1)]]></cd:Init>
+  </cd:ProductVariable>
+  <cd:ProductVariable name="num_dsr">
+    <cd:Dimension><![CDATA[$num_ds]]></cd:Dimension>
+    <cd:Init><![CDATA[for i = 0 to $num_ds - 1 do $num_dsr[i] = if($ds_available[i] != 0, int(/dsd[$ds_to_dsd_index[i]]/num_dsr), -1)]]></cd:Init>
+  </cd:ProductVariable>
+</cd:ProductDefinition>

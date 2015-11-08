@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_L0Hdr" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="packet_id">
+    <cd:Integer>
+      <cd:Description>packet_id</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="packet_seq_cnt">
+    <cd:Integer>
+      <cd:Description>packet_seq_cnt</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="packet_length">
+    <cd:Integer>
+      <cd:Description>packet_length</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="datafield_header_length">
+    <cd:Integer>
+      <cd:Description>Data Field Header Length</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="state_code">
+    <cd:Integer>
+      <cd:Description>State Code</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="icu">
+    <cd:Integer>
+      <cd:Description>ICU</cd:Description>
+      <cd:Unit>1/256 s</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="redundancy_vector">
+    <cd:Integer>
+      <cd:Description>Redundancy Definition Vector</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="packet_id_overflow">
+    <cd:Integer>
+      <cd:Description>Packet and Overflow bits</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="broadcast_counter">
+    <cd:Integer>
+      <cd:Description>Broadcast Counter</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="pmtc_settings">
+    <cd:NamedType id="SCI_L0_PMTC_Settings_Block"/>
+  </cd:Field>
+  <cd:Field name="orbit_state_vector">
+    <cd:NamedType id="SCI_L0_Orbit_State_Vector"/>
+  </cd:Field>
+  <cd:Field name="channels">
+    <cd:Integer>
+      <cd:Description>Channels</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

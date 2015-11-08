@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_SF2_AX_GADS_topo" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="num_ref_lat">
+    <cd:Integer>
+      <cd:Description>Number of reference latitudes</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_ref_long">
+    <cd:Integer>
+      <cd:Description>Number of reference longitudes</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="height">
+    <cd:Array>
+      <cd:Description>Height</cd:Description>
+      <cd:Dimension><![CDATA[int(../num_ref_long)]]></cd:Dimension>
+      <cd:Dimension><![CDATA[int(../num_ref_lat)]]></cd:Dimension>
+      <cd:Integer>
+        <cd:Unit>m</cd:Unit>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

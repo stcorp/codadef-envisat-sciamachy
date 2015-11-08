@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_ADSR_states" last-modified="2010-08-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dsr_time">
+    <cd:Time timeformat="binary_envisat_datetime">
+      <cd:Description>Start time of the scan phase of the state</cd:Description>
+    </cd:Time>
+  </cd:Field>
+  <cd:Field name="attach_flag">
+    <cd:Integer>
+      <cd:Description>Attachment Flag (set to 1 if all MDSRs corresponding to this ADSR are blank, set to zero otherwise)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="reason_code">
+    <cd:Integer>
+      <cd:Description>Reason code if the attachment flag is set to 1. 0 = MDS DSRs are not attached because this type measurement is not intended to be in the level 1b product (dark measurements); 2: the measurement state was corrupted.</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="orb_phase">
+    <cd:Float>
+      <cd:Description>Orbit phase after eclipse of the state (range: 0-1)</cd:Description>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>float</cd:NativeType>
+    </cd:Float>
+  </cd:Field>
+  <cd:Field name="meas_cat">
+    <cd:Integer>
+      <cd:Description>Measurement Category</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="state_id">
+    <cd:Integer>
+      <cd:Description>State ID</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="dur_scan_phase">
+    <cd:Integer>
+      <cd:Description>Duration of scan phase of the state</cd:Description>
+      <cd:Unit>1/16 s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="16.000000">
+        <cd:Unit>s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="longest_intg_time">
+    <cd:Integer>
+      <cd:Description>Longest Integration time</cd:Description>
+      <cd:Unit>1/16 s</cd:Unit>
+      <cd:Conversion numerator="1.000000" denominator="16.000000">
+        <cd:Unit>s</cd:Unit>
+      </cd:Conversion>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_clus">
+    <cd:Integer>
+      <cd:Description>Number of clusters</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="clus_config">
+    <cd:Array>
+      <cd:Description>Cluster Configuration</cd:Description>
+      <cd:Dimension>64</cd:Dimension>
+      <cd:Record>
+        <cd:Field name="cluster_id">
+          <cd:Integer>
+            <cd:Description>Cluster ID (1-64 are valid entries for an existing cluster, the first cluster ID being '0' notifies the end of the cluster ID list)</cd:Description>
+            <cd:BitSize>8</cd:BitSize>
+            <cd:NativeType>uint8</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="chan_num">
+          <cd:Integer>
+            <cd:Description>Channel number (1-8)</cd:Description>
+            <cd:BitSize>8</cd:BitSize>
+            <cd:NativeType>uint8</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="start_pix">
+          <cd:Integer>
+            <cd:Description>Start pixel number (inclusive, 0-1023)</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="clus_len">
+          <cd:Integer>
+            <cd:Description>Cluster length (1-1024)</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="pet">
+          <cd:Float>
+            <cd:Description>Pixel Exposure time (PET)</cd:Description>
+            <cd:Unit>s</cd:Unit>
+            <cd:BitSize>32</cd:BitSize>
+            <cd:NativeType>float</cd:NativeType>
+          </cd:Float>
+        </cd:Field>
+        <cd:Field name="intgr_time">
+          <cd:Integer>
+            <cd:Description>Integration time. IMPORTANT NOTE: this field gives the readout interval (the name is misleading).</cd:Description>
+            <cd:Unit>1/16s</cd:Unit>
+            <cd:Conversion numerator="1.000000" denominator="16.000000">
+              <cd:Unit>s</cd:Unit>
+            </cd:Conversion>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="coadd_factor">
+          <cd:Integer>
+            <cd:Description>Co-adding factor</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="num_readouts">
+          <cd:Integer>
+            <cd:Description>Number of cluster readouts per DSR</cd:Description>
+            <cd:BitSize>16</cd:BitSize>
+            <cd:NativeType>uint16</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+        <cd:Field name="clus_data_type">
+          <cd:Integer>
+            <cd:Description>Cluster Data Type: Value defining the cluster data structure. 1 = sig (straylight not co-added); 2 = sigc (straylight co-added).</cd:Description>
+            <cd:BitSize>8</cd:BitSize>
+            <cd:NativeType>uint8</cd:NativeType>
+          </cd:Integer>
+        </cd:Field>
+      </cd:Record>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="mds_type">
+    <cd:Integer>
+      <cd:Description>MDS for this state (1 = nadir, 2 = limb, 3 = occultation, 4 = monitoring)</cd:Description>
+      <cd:BitSize>8</cd:BitSize>
+      <cd:NativeType>uint8</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_rep_geo">
+    <cd:Integer>
+      <cd:Description>Number of repeated geolocation and Level-0 headers</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_pmd">
+    <cd:Integer>
+      <cd:Description>Number of Integrated PMD Values</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_diff_intg_times">
+    <cd:Integer>
+      <cd:Description>Number of different integration times</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="intg_times">
+    <cd:Array>
+      <cd:Description>Integration times: Ordering from longest to shortest integration time</cd:Description>
+      <cd:Dimension>64</cd:Dimension>
+      <cd:Integer>
+        <cd:Unit>1/16 s</cd:Unit>
+        <cd:Conversion numerator="1.000000" denominator="16.000000">
+          <cd:Unit>s</cd:Unit>
+        </cd:Conversion>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_pol_per_intg">
+    <cd:Array>
+      <cd:Description>Number of fractional Polarization Values per Integration time:Ordering from longest to shortest integration time</cd:Description>
+      <cd:Dimension>64</cd:Dimension>
+      <cd:Integer>
+        <cd:BitSize>16</cd:BitSize>
+        <cd:NativeType>uint16</cd:NativeType>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="num_pol">
+    <cd:Integer>
+      <cd:Description>Number of Fractional Polarization Values</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="num_dsr">
+    <cd:Integer>
+      <cd:Description>Number of DSRs</cd:Description>
+      <cd:BitSize>16</cd:BitSize>
+      <cd:NativeType>uint16</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="len_dsr">
+    <cd:Integer>
+      <cd:Description>Length of this DSR in bytes</cd:Description>
+      <cd:Unit>bytes</cd:Unit>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:NativeType>uint32</cd:NativeType>
+    </cd:Integer>
+  </cd:Field>
+</cd:Record>

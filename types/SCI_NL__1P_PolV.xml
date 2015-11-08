@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="SCI_NL__1P_PolV" last-modified="2008-07-01" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="frac_pol_vals_q">
+    <cd:Array>
+      <cd:Description>Fractional polarization values Q (6 values derived from PMDs, 5 values derived from the overlapping regions, and one model value below 300 nm)</cd:Description>
+      <cd:Dimension>12</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="err_q">
+    <cd:Array>
+      <cd:Description>Errors on Q values</cd:Description>
+      <cd:Dimension>12</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="frac_pol_vals_u">
+    <cd:Array>
+      <cd:Description>Fractional polarization values U (6 values derived from the PMDs and one model value below 300 nm)</cd:Description>
+      <cd:Dimension>12</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="err_u">
+    <cd:Array>
+      <cd:Description>Errors on the U values</cd:Description>
+      <cd:Dimension>12</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="rep_wavlen">
+    <cd:Array>
+      <cd:Description>Representing wavelength for the fractional polarization values and the 45 degree PMD</cd:Description>
+      <cd:Dimension>13</cd:Dimension>
+      <cd:Float>
+        <cd:Unit>nm</cd:Unit>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+  <cd:Field name="gdf_para">
+    <cd:Array>
+      <cd:Description>GDF parameters</cd:Description>
+      <cd:Dimension>3</cd:Dimension>
+      <cd:Float>
+        <cd:BitSize>32</cd:BitSize>
+        <cd:NativeType>float</cd:NativeType>
+      </cd:Float>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>
